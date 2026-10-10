@@ -47,3 +47,26 @@ Platform **OJK-Compliant Credit Scoring Engine (OJK-CS)** menyediakan infrastruk
 | **Accuracy** | Gini Coefficient / ROC-AUC | Gini $\ge 0.55$ / AUC $\ge 0.78$ |
 | **Compliance** | Consent Audit Log Completeness | $100\%$ terverifikasi cryptographically |
 | **Regulatory** | Explainability Coverage (SHAP) | $100\%$ scoring request menghasilkan top-5 factor drivers |
+
+## 5. Financial Strategy & Commercial Pricing Model
+
+### 5.1 Alokasi Anggaran Pengembangan (R&D & Infrastructure CAPEX/OPEX)
+- **CAPEX (R&D Development 12 Minggu):** $\text{Rp } 550.000.000$ (Termasuk gaji tim Engineering: Go/Python Lead, ML Engineer, Security Specialist, Dukcapil & iDeb Integration Specialist, serta legal/OJK sandbox consultant).
+- **OPEX Infrastructure (Bulanan):** $\text{Rp } 35.000.000\text{ /bulan}$ (Cloud AWS/GCP Multi-AZ, iDeb SLIK Gateway proxy, Vault KMS, Redis Enterprise, TimescaleDB cluster).
+
+### 5.2 Skema Harga Jual & Model Komersial B2B
+
+1. **Model API Pay-Per-Query (Pay-as-you-go):**
+   - **Tier Starter (< 5.000 hits/bulan):** $\text{Rp } 4.500\text{ per API scoring hit}$.
+   - **Tier Growth (5.000 - 50.000 hits/bulan):** $\text{Rp } 2.800\text{ per API scoring hit}$.
+   - **Tier Enterprise (> 50.000 hits/bulan):** $\text{Rp } 1.500\text{ per API scoring hit}$.
+
+2. **Model Langganan / Subscription SaaS (Bulanan/Tahunan):**
+   - **Starter Plan (BPR & Lembaga Keuangan Mikro):** $\text{Rp } 7.500.000\text{ /bulan}$ (Inklusi $2.000$ API hits, basic XAI scorecard, standar support).
+   - **Business Plan (P2P Lending & Multifinance):** $\text{Rp } 25.000.000\text{ /bulan}$ (Inklusi $10.000$ API hits, full XAI SHAP factor, custom risk threshold, SLA $99.9\%$).
+   - **Enterprise Plan (Bank Komersial & Platform Fintek Besar):** $\text{Rp } 65.000.000\text{ /bulan}$ (Inklusi $30.000$ API hits, dedicated infrastructure, SLA $99.95\%$, & unlimited audit log retention).
+
+3. **Model Project Enterprise / On-Premise License (Custom Implementation):**
+   - **One-Time Implementation & Perpetual License:** $\text{Rp } 950.000.000 - 1.500.000.000$ (Deployment On-Premise di Private Data Center Bank/LJK, integrasi Host-to-Host Core Banking & iDeb SLIK OJK, transfer knowledge, & kustomisasi scorecard).
+   - **Annual Maintenance & Support (AMC):** $15\% - 20\%$ dari nilai lisensi project per tahun ($\approx \text{Rp } 150.000.000 - 250.000.000\text{ /tahun}$).
+

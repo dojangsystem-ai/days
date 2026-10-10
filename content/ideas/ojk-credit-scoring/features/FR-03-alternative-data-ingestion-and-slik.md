@@ -137,12 +137,38 @@ And returns HTTP status code 400 Bad Request with explicit field validation erro
 }
 ```
 
+### 3.2 Spesifikasi Ekstraksi & Parser iDeb SLIK OJK
+Integrasi iDeb (Informasi Debitur) SLIK OJK diproses melalui parser khusus untuk mengonversi data struktur/unstructured iDeb menjadi variabel numerik feature store:
+
+1. **Komponen Ekstraksi iDeb OJK:**
+   - **Kolektibilitas Tertinggi & Terendah (24 Bulan terakhir):** Ekstraksi status Kol-1 (Lancar), Kol-2 (Dalam Perhatian Khusus), Kol-3 (Kurang Lancar), Kol-4 (Diragukan), Kol-5 (Macet).
+   - **Total Baki Debet (Outstanding Principal Balance):** Agregasi sisa pokok pinjaman aktif di seluruh bank/LJK pelapor.
+   - **Fasilitas Kredit:** Total fasilitas aktif, fasilitas ditutup, dan rasio pemanfaatan plafon (*Credit Utilization Rate*).
+   - **Historis Hari Tunggakan (DPD - Days Past Due):** Maksimum DPD dalam 3, 6, 12, dan 24 bulan terakhir.
+
+2. **Skema Variabel Fitur Ter-normalisasi:**
+   ```json
+   {
+     "slik_features": {
+       "max_kolektibilitas_24m": 1,
+       "worst_kolektibilitas_ever": 2,
+       "total_baki_debet_idr": 45000000,
+       "total_plafon_kredit_idr": 60000000,
+       "credit_utilization_ratio": 0.75,
+       "active_facilities_count": 3,
+       "max_dpd_12m": 14,
+       "has_write_off_history": false
+     }
+   }
+   ```
+
 ---
 
 ## 4. Edge Cases & Failure Modes
 
-1. **SLIK Record Not Found (No Credit History):** Jika calon debitur belum memiliki catatan di SLIK OJK, pipeline beralih secara otomatis ke *Alternative-Data-Only Scoring Sub-Model* dengan bobot risiko disesuaikan.
+1. **SLIK Record Not Found (No Credit History):** Jika calon debitur belum memiliki catatan di SLIK OJK (iDeb Kosong), pipeline beralih secara otomatis ke *Alternative-Data-Only Scoring Sub-Model* dengan bobot risiko disesuaikan.
 2. **Data Outlier Filtering:** Transaksi e-wallet individual di atas Rp 500.000.000 yang bersifat anomalous di-winsorize / di-cap pada percentile 99th untuk mencegah manipulasi skor kredit.
+
 
 ---
 
