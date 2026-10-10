@@ -67,15 +67,15 @@ Simulasi pertarungan teratur 3 langkah tanpa perlengkapan body protector:
 
 ```mermaid
 quadrantChart
-    title Kriteria Kelulusan UKT Sabuk Kuning
-    x-axis Akurasi Rendah --> Akurasi Tinggi
-    y-axis Tenaga Lemah --> Tenaga Meledak/Fokus
-    quadrant-1 Lulus Sangat Memuaskan (Score 85-100)
-    quadrant-2 Perbaiki Teknik Kuda-kuda (Score 70-84)
-    quadrant-3 Gagal / Her (Score < 70)
-    quadrant-4 Perbaiki Letupan Tenaga (Score 70-84)
-    Kombinasi Geup 8: [0.8, 0.85]
-    Kombinasi Geup 9: [0.65, 0.7]
+    title "Kriteria Kelulusan UKT Sabuk Kuning"
+    x-axis "Akurasi Rendah" --> "Akurasi Tinggi"
+    y-axis "Tenaga Lemah" --> "Tenaga Meledak/Fokus"
+    quadrant-1 "Lulus Sangat Memuaskan (Score 85-100)"
+    quadrant-2 "Perbaiki Teknik Kuda-kuda (Score 70-84)"
+    quadrant-3 "Gagal / Her (Score < 70)"
+    quadrant-4 "Perbaiki Letupan Tenaga (Score 70-84)"
+    "Kombinasi Geup 8": [0.8, 0.85]
+    "Kombinasi Geup 9": [0.65, 0.7]
 ```
 
 ---

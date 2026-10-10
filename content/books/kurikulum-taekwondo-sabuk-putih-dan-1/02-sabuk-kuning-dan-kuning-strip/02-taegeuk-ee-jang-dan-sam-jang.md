@@ -67,16 +67,16 @@ flowchart TD
 
 ```mermaid
 quadrantChart
-    title Pemetaan Karakteristik Poomsae 1 - 3
-    x-axis Lambat/Stabil --> Cepat/Dinamis
-    y-axis Sederhana --> Kompleks
-    quadrant-1 Taegeuk 3 Jang (Api)
-    quadrant-2 Transisi Tingkat Menengah
-    quadrant-3 Taegeuk 1 Jang (Langit)
-    quadrant-4 Taegeuk 2 Jang (Danau)
-    Taegeuk 1 Jang: [0.2, 0.2]
-    Taegeuk 2 Jang: [0.4, 0.4]
-    Taegeuk 3 Jang: [0.85, 0.8]
+    title "Pemetaan Karakteristik Poomsae 1 - 3"
+    x-axis "Lambat/Stabil" --> "Cepat/Dinamis"
+    y-axis "Sederhana" --> "Kompleks"
+    quadrant-1 "Taegeuk 3 Jang (Api)"
+    quadrant-2 "Transisi Tingkat Menengah"
+    quadrant-3 "Taegeuk 1 Jang (Langit)"
+    quadrant-4 "Taegeuk 2 Jang (Danau)"
+    "Taegeuk 1 Jang": [0.2, 0.2]
+    "Taegeuk 2 Jang": [0.4, 0.4]
+    "Taegeuk 3 Jang": [0.85, 0.8]
 ```
 
 ---
