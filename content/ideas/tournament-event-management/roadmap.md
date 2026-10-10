@@ -22,19 +22,19 @@ gantt
     title TMS Product Implementation Timeline
     dateFormat  YYYY-MM-DD
     section MVP Core Launch
-    Portal Registrasi & Payment        :done, mvp1, 2026-11-01, 14d
-    Algoritma Drawing Bagan            :done, mvp2, 2026-11-15, 14d
-    Call Room Dispatch Module          :active, mvp3, 2026-12-01, 14d
-    Medal Recap & Result Book PDF      :mvp4, 2026-12-15, 14d
+    Portal Registrasi dan Payment        :done, mvp1, 2026-11-01, 14d
+    Algoritma Drawing Bagan              :done, mvp2, 2026-11-15, 14d
+    Call Room Dispatch Module            :active, mvp3, 2026-12-01, 14d
+    Medal Recap dan Result Book PDF      :mvp4, 2026-12-15, 14d
     
-    section Phase 1 (Enhancements)
-    Edge Server Local Deployment Kit   :p1_1, 2027-01-15, 21d
-    WhatsApp API Automation            :p1_2, 2027-02-05, 14d
-    Live Streaming Overlay Engine      :p1_3, 2027-02-19, 21d
+    section Phase 1 Enhancements
+    Edge Server Local Deployment Kit     :p1_1, 2027-01-15, 21d
+    WhatsApp API Automation              :p1_2, 2027-02-05, 14d
+    Live Streaming Overlay Engine        :p1_3, 2027-02-19, 21d
     
-    section Phase 2 (Advanced SaaS)
-    AI Bracket & Timetable Optimizer   :p2_1, 2027-04-01, 30d
-    Multi-Sport Custom Scoring Rules   :p2_2, 2027-05-01, 30d
+    section Phase 2 Advanced SaaS
+    AI Bracket Optimizer                 :p2_1, 2027-04-01, 30d
+    Multi Sport Custom Rules             :p2_2, 2027-05-01, 30d
 ```
 
 ---
