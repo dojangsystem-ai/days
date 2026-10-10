@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Deck: Tournament Management System (TMS)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: rgba(22, 30, 46, 0.75);
+            --bg-card-border: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar / Controls */
+        .header-bar {
+            height: 60px;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--bg-card-border);
+            background: rgba(9, 13, 22, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-badge {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #818cf8;
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .slide-counter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--bg-card-border);
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--bg-card-border);
+            color: var(--text-main);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            border-color: var(--primary);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            height: 3px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+            width: 10%;
+            transition: width 0.3s ease;
+        }
+
+        /* Slide Viewport */
+        .viewport {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.97) translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Slide Components */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+
+        .slide-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%; }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card-highlight {
+            border-color: rgba(99, 102, 241, 0.4);
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(22, 30, 46, 0.8));
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Metric Pill & Stat Box */
+        .stat-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* Comparison Table */
+        .comp-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--bg-card-border);
+        }
+
+        .comp-table th {
+            background: rgba(30, 41, 59, 0.8);
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .comp-table td {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--bg-card-border);
+            color: var(--text-main);
+        }
+
+        .badge-old {
+            color: #f87171;
+            background: rgba(239, 68, 68, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .badge-new {
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        /* Footer Note */
+        .slide-footer {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 14px;
+        }
+
+        /* Hero Slide Custom */
+        .hero-layout {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .tag-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .feature-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--bg-card-border);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .icon-cyan { background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); }
+        .icon-emerald { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+        .icon-amber { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="header-bar">
+        <div class="brand-logo">
+            <i data-lucide="trophy" style="color:#6366f1;"></i>
+            TMS Platform Pitch
+            <span class="brand-badge">Client Presentation</span>
+        </div>
+        <div class="controls">
+            <span class="slide-counter" id="slideIndicator">Slide 1 / 10</span>
+            <button class="nav-btn" id="prevBtn" onclick="prevSlide()"><i data-lucide="chevron-left"></i></button>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()"><i data-lucide="chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Viewport Container -->
+    <div class="viewport">
+
+        <!-- SLIDE 1: HERO / EXECUTIVE SUMMARY -->
+        <div class="slide active" id="slide-1">
+            <div class="hero-layout">
+                <div class="slide-subtitle"><i data-lucide="sparkles"></i> Client Presentation Deck</div>
+                <h1 class="hero-title">Tournament Management System (TMS)</h1>
+                <p class="hero-desc">Platform Otomasi Kejuaraan End-to-End: Mengeliminasi Delay Pertandingan, Efisiensi SDM Panitia 70%, dan Terbit Laporan Resmi Instan.</p>
+                <div class="tag-row">
+                    <div class="feature-pill"><i data-lucide="zap" style="color:#06b6d4;"></i> Bracket Engine &lt; 3 Detik</div>
+                    <div class="feature-pill"><i data-lucide="clock" style="color:#10b981;"></i> Mat Downtime &lt; 30 Detik</div>
+                    <div class="feature-pill"><i data-lucide="file-check" style="color:#6366f1;"></i> Instant Result Book PDF</div>
+                    <div class="feature-pill"><i data-lucide="wifi-off" style="color:#f59e0b;"></i> Edge Local Server Ready</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Presenter: Event Tech Solutions Team</span>
+                <span>Gunakan Panah Kiri/Kanan keyboard untuk navigasi</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: THE PROBLEM -->
+        <div class="slide" id="slide-2">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="alert-triangle"></i> Realita Lapangan</div>
+                <h2 class="slide-title">Tantangan Utama Penyelenggaraan Kejuaraan Manual</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-3">
+                    <div class="card">
+                        <div>
+                            <div class="icon-box icon-amber"><i data-lucide="users"></i></div>
+                            <div class="card-title">Sekretariat Lambat &amp; Mahal</div>
+                            <div class="card-body">Membutuhkan 10-15 orang panitia yang bekerja hingga larut malam hanya untuk membuat bagan manual &amp; rekap medali. Biaya honor membengkak Rp 15-25 Juta/event.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="icon-box icon-cyan"><i data-lucide="git-pull-request"></i></div>
+                            <div class="card-title">Bagan Rawan Human Error</div>
+                            <div class="card-body">Pembuatan bagan manual berjam-jam saat Technical Meeting berisiko salah seeding dan kontingen se-daerah bertemu di babak awal.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="icon-box"><i data-lucide="volume-2"></i></div>
+                            <div class="card-title">Arena Delay &amp; Walkover (WO)</div>
+                            <div class="card-body">Pemanggilan atlet via megapon tidak terdengar di area pemanasan. Arena kosong 5+ menit antar-partai, membuat jadwal mundur berjam-jam.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Problem Statement: Inefisiensi operasional berdampak pada pembengkakan biaya venue dan citra EO.</span>
+                <span>TMS Solution Pitch</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: SOLUTION ARCHITECTURE -->
+        <div class="slide" id="slide-3">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="cpu"></i> Solusi Digital TMS</div>
+                <h2 class="slide-title">Ekosistem Otomasi Kejuaraan Terintegrasi</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-4">
+                    <div class="card card-highlight">
+                        <div>
+                            <div class="icon-box icon-emerald"><i data-lucide="user-check"></i></div>
+                            <div class="card-title">1. Registrasi &amp; Payment</div>
+                            <div class="card-body">Portal mandiri manager kontingen. Validasi otomatis batasan umur &amp; berat badan. Integration QRIS &amp; Virtual Account.</div>
+                        </div>
+                    </div>
+                    <div class="card card-highlight">
+                        <div>
+                            <div class="icon-box icon-cyan"><i data-lucide="network"></i></div>
+                            <div class="card-title">2. Auto Bracket Drawing</div>
+                            <div class="card-body">Algoritma cerdas membuat bagan Single/Double Elimination &amp; Round Robin secara instan tanpa bentrok se-kontingen.</div>
+                        </div>
+                    </div>
+                    <div class="card card-highlight">
+                        <div>
+                            <div class="icon-box"><i data-lucide="bell-ring"></i></div>
+                            <div class="card-title">3. Real-time Call Room</div>
+                            <div class="card-body">Layar dispatch digital + Notifikasi WhatsApp otomatis ke pelatih. Atlet dipanggil tepat waktu, arena terus berjalan.</div>
+                        </div>
+                    </div>
+                    <div class="card card-highlight">
+                        <div>
+                            <div class="icon-box icon-amber"><i data-lucide="file-text"></i></div>
+                            <div class="card-title">4. Instant Result Book</div>
+                            <div class="card-body">Rekapitulasi medali real-time &amp; penerbitan Buku Hasil Kejuaraan PDF resmi berlisensi digital dalam hitungan detik.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Alur Kerja Seamless: Pendaftaran &rarr; Bagan &rarr; Pertandingan &rarr; Buku Hasil</span>
+                <span>TMS Platform</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: BENCHMARKS & KEY METRICS -->
+        <div class="slide" id="slide-4">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="bar-chart-3"></i> Core Performance Benchmarks</div>
+                <h2 class="slide-title">Performa Berbasis Data &amp; Key Performance Indicators</h2>
+            </div>
+            <div class="slide-content" style="flex-direction: column;">
+                <div class="grid-4" style="margin-bottom: 24px;">
+                    <div class="stat-box">
+                        <div class="stat-number">&lt; 3s</div>
+                        <div class="stat-label">Bracket Drawing (1,000+ Atlet)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" style="color:var(--accent-emerald);">&lt; 30s</div>
+                        <div class="stat-label">Mat Downtime (Dari 5 Menit)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" style="color:var(--primary);">&lt; 10s</div>
+                        <div class="stat-label">Official Result PDF Generation</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" style="color:var(--accent-amber);">99.9%</div>
+                        <div class="stat-label">System Uptime &amp; Latency &lt; 100ms</div>
+                    </div>
+                </div>
+                <div class="card" style="flex:1;">
+                    <div class="card-title"><i data-lucide="shield-check" style="color:#10b981;"></i> Zero Calculation Error Assurance</div>
+                    <div class="card-body">Seluruh perhitungan poin perolehan medali (Emas, Perak, Perunggu) dan penetapan Juara Umum dikalkulasi secara deterministik oleh sistem, menghilangkan 100% risiko salah hitung manual dan komplain antar-kontingen.</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Data diukur berdasarkan uji simulasi beban pertandingan 1,500 peserta multi-arena.</span>
+                <span>TMS Platform</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: FEATURE DEEP-DIVE 1 -->
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="layers"></i> Modul Unggulan #1</div>
+                <h2 class="slide-title">Automated Drawing &amp; Real-time Call Room Dispatch</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="icon-box icon-cyan"><i data-lucide="git-commit"></i></div>
+                        <div class="card-title">Algoritma Bracket Anti-Bentrok</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li>Mendukung Single Elimination, Double Elimination, dan Round Robin.</li>
+                                <li><strong>Seeding Constraint Handling:</strong> Mencegah atlet dari kontingen/klub yang sama bertemu di Ronde 1.</li>
+                                <li>Visualisasi tree bracket interaktif yang bisa langsung di-print atau dibagikan via link publik.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box icon-emerald"><i data-lucide="smartphone"></i></div>
+                        <div class="card-title">WhatsApp Call Alert &amp; Display Arena</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li>Notifikasi WA otomatis terkirim ke HP Pelatih 2 partai sebelum bertanding.</li>
+                                <li>Layar Monitor Digital di area Call Room menampilkan antrean status atlet (Waiting &rarr; Checked In &rarr; On Arena).</li>
+                                <li>Mengeliminasi partai kosong dan keterlambatan atlet masuk matras.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Mengubah kekacauan antrean atlet menjadi alur presisi berbasis digital notification.</span>
+                <span>TMS Feature Spec</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: FEATURE DEEP-DIVE 2 -->
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="award"></i> Modul Unggulan #2</div>
+                <h2 class="slide-title">Dynamic Medal Tally &amp; Instant Result Book</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="icon-box icon-amber"><i data-lucide="trophy"></i></div>
+                        <div class="card-title">Leaderboard Medali Real-time</div>
+                        <div class="card-body">
+                            <p style="margin-bottom: 12px;">Klasemen kontingen langsung ter-update seketika saat wasit menyelesaikan pertandingan final di arena.</p>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li>Kalkulasi otomatis Juara Umum 1, 2, 3 berdasarkan bobot emas, perak, dan perunggu.</li>
+                                <li>Dapat ditampilkan langsung pada layar videotron venue &amp; halaman public live score.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box"><i data-lucide="file-check-2"></i></div>
+                        <div class="card-title">Penerbitan Buku Hasil 1-Click</div>
+                        <div class="card-body">
+                            <p style="margin-bottom: 12px;">Menghasilkan <strong>Official Result Book PDF</strong> lengkap bersertifikat digital secara instan.</p>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li>Memuat statistik lengkap, bagan akhir pertandingan, daftar pemenang, dan lembar pengesahan.</li>
+                                <li>Siap diserahkan ke Dinas Pemuda &amp; Olahraga (Dispora), Pengprov, dan Sponsor di hari yang sama.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Laporan resmi selesai di hari-H tanpa penundaan berhari-hari.</span>
+                <span>TMS Feature Spec</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: EDGE INFRASTRUCTURE -->
+        <div class="slide" id="slide-7">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="server"></i> Keandalan Infrastruktur</div>
+                <h2 class="slide-title">Hybrid Cloud &amp; Local Edge Server Deployment</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card card-highlight">
+                        <div class="icon-box icon-cyan"><i data-lucide="wifi-off"></i></div>
+                        <div class="card-title">Solusi Anti Rontok Sinyal di Venue</div>
+                        <div class="card-body">
+                            <p style="line-height: 1.7; margin-bottom: 16px;">Banyak gedung olahraga (GOR) memiliki sinyal seluler/internet yang lemah saat dipadati ribuan penonton. TMS dilengkapi dengan <strong>Edge Server Toolkit (Mini PC Local Deployment)</strong>.</p>
+                            <div class="stat-box" style="text-align: left; padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">Two-Way Auto Synchronization</div>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">Sistem tetap berjalan 100% offline di venue via LAN internal, dan otomatis menyinkronkan data ke Cloud SaaS begitu jaringan internet kembali terhubung.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box icon-emerald"><i data-lucide="lock"></i></div>
+                        <div class="card-title">Keamanan Data &amp; Akses Terkontrol</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li><strong>Multi-Tenant Isolation:</strong> Data event Anda diisolasi sepenuhnya dengan PostgreSQL Row-Level Security.</li>
+                                <li><strong>Role-Based Access (RBAC):</strong> Hak akses terpisah untuk EO, Admin Sekretariat, Wasit, Call Room Officer, dan Manager Klub.</li>
+                                <li>Enkripsi dokumen sensitif atlet (Akta/KTP) menggunakan AES-256.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Jaminan event berjalan lancar tanpa terkendala koneksi internet venue.</span>
+                <span>TMS Architecture</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: STAKEHOLDER BENEFITS MATRIX -->
+        <div class="slide" id="slide-8">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="heart-handshake"></i> Value for Everyone</div>
+                <h2 class="slide-title">Matriks Benefit Berdasarkan Persona Pengguna</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-4">
+                    <div class="card">
+                        <div class="card-title" style="color:var(--accent-cyan);"><i data-lucide="briefcase"></i> Event Organizer (EO)</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 16px; font-size: 0.85rem; line-height: 1.6;">
+                                <li>Hemat biaya SDM hingga 70%.</li>
+                                <li>Bebas risiko denda sewa gedung akibat jadwal delay.</li>
+                                <li>Transparansi pendapatan registrasi online.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--accent-emerald);"><i data-lucide="user"></i> Coach &amp; Atlet</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 16px; font-size: 0.85rem; line-height: 1.6;">
+                                <li>Pendaftaran mandiri cepat tanpa antre fisik.</li>
+                                <li>Notifikasi WA jam tanding real-time di HP.</li>
+                                <li>Bagan &amp; live score transparan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--primary);"><i data-lucide="check-square"></i> Wasit &amp; Perangkat</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 16px; font-size: 0.85rem; line-height: 1.6;">
+                                <li>Bagan akurat tanpa bentrok klub awal.</li>
+                                <li>Alur Call Room teratur, matras selalu terisi.</li>
+                                <li>Pengesahan hasil pertandingan instan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--accent-amber);"><i data-lucide="building"></i> Pengprov &amp; Sponsor</div>
+                        <div class="card-body">
+                            <ul style="padding-left: 16px; font-size: 0.85rem; line-height: 1.6;">
+                                <li>Buku Hasil Kejuaraan terbit hari-H.</li>
+                                <li>Database rekam jejak prestasi atlet terpusat.</li>
+                                <li>Branding profesional di live stream.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Setiap pemangku kepentingan merasakan peningkatan efisiensi dan pengalaman event.</span>
+                <span>TMS Benefit Matrix</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: FINANCIAL ROI & COST COMPARISON -->
+        <div class="slide" id="slide-9">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="dollar-sign"></i> Return on Investment</div>
+                <h2 class="slide-title">Analisis ROI &amp; Perbandingan Biaya Operasional</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div>
+                        <table class="comp-table">
+                            <thead>
+                                <tr>
+                                    <th>Komponen Operasional</th>
+                                    <th>Cara Konvensional</th>
+                                    <th>Dengan TMS Platform</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Staf Sekretariat</strong></td>
+                                    <td><span class="badge-old">12 - 15 Orang</span></td>
+                                    <td><span class="badge-new">3 - 4 Orang (Hemat 70%)</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Honor SDM Lembur</strong></td>
+                                    <td><span class="badge-old">Rp 15M - 25M</span></td>
+                                    <td><span class="badge-new">Rp 4M - 6M</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Risiko Overtime Venue</strong></td>
+                                    <td><span class="badge-old">Tinggi (Delay Berjam-jam)</span></td>
+                                    <td><span class="badge-new">Nol (Tepat Waktu)</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Buku Hasil Kejuaraan</strong></td>
+                                    <td><span class="badge-old">3 - 7 Hari Pasca Event</span></td>
+                                    <td><span class="badge-new">&lt; 10 Detik Pasca Event</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card card-highlight">
+                        <div class="card-title"><i data-lucide="pie-chart" style="color:#10b981;"></i> Skema Zero Net Cost untuk Panitia</div>
+                        <div class="card-body">
+                            <p style="margin-bottom: 12px; line-height: 1.6;">Panitia Pelaksana memiliki opsi membebankan biaya lisensi sistem TMS langsung pada komponen registrasi atlet:</p>
+                            <div class="stat-box" style="margin-bottom: 12px;">
+                                <div class="stat-number">+ Rp 15,000</div>
+                                <div class="stat-label">Penambahan Biaya Registrasi / Atlet</div>
+                            </div>
+                            <p style="font-size: 0.88rem; color: var(--text-muted);">Dengan 600 atlet terdaftar, panitia mengumpulkan Rp 9.000.000—menutup penuh biaya sistem TMS. Panitia menikmati seluruh efisiensi secara <strong>GRATIS (Zero Net Cost)</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>TMS tidak menambah beban biaya, melainkan memotong pemborosan anggaran operasional.</span>
+                <span>TMS Financial Model</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: PRICING & NEXT STEPS -->
+        <div class="slide" id="slide-10">
+            <div class="slide-header">
+                <div class="slide-subtitle"><i data-lucide="rocket"></i> Paket Pembiayaan</div>
+                <h2 class="slide-title">Skema Pembiayaan &amp; Langkah Kerjasama</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-3">
+                    <div class="card">
+                        <div>
+                            <div class="card-title" style="color:var(--accent-cyan);">Small Event Tier</div>
+                            <div style="font-family:'JetBrains Mono'; font-size:1.6rem; font-weight:800; color:#fff; margin:8px 0;">Rp 5,000,000</div>
+                            <div class="card-body" style="font-size:0.85rem;">
+                                <p>Hingga 300 Peserta | 3 Hari Event</p>
+                                <ul style="padding-left:16px; margin-top:10px; line-height:1.6;">
+                                    <li>Registrasi &amp; Online Payment</li>
+                                    <li>Auto Bracket &amp; Call Room</li>
+                                    <li>Instant Result Book PDF</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-highlight">
+                        <div>
+                            <div class="card-title" style="color:var(--accent-emerald);">Medium Event (Popular)</div>
+                            <div style="font-family:'JetBrains Mono'; font-size:1.6rem; font-weight:800; color:#fff; margin:8px 0;">Rp 12,000,000</div>
+                            <div class="card-body" style="font-size:0.85rem;">
+                                <p>301 - 800 Peserta | Up to 4 Arena</p>
+                                <ul style="padding-left:16px; margin-top:10px; line-height:1.6;">
+                                    <li>Seluruh Fitur Small Tier</li>
+                                    <li>WhatsApp Gateway Alerts</li>
+                                    <li>1 On-site Support Technician</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="card-title" style="color:var(--primary);">Enterprise / Kejurnas</div>
+                            <div style="font-family:'JetBrains Mono'; font-size:1.6rem; font-weight:800; color:#fff; margin:8px 0;">Rp 25M - 45M</div>
+                            <div class="card-body" style="font-size:0.85rem;">
+                                <p>801 - 2,500+ Peserta | Unlimited Arena</p>
+                                <ul style="padding-left:16px; margin-top:10px; line-height:1.6;">
+                                    <li>Edge Local Deployment Kit</li>
+                                    <li>2-3 Personel Teknisi On-site</li>
+                                    <li>Live Stream Overlay System</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Hubungi Tim Kami untuk Jadwal Demo Live &amp; Konsultasi Kejuaraan Anda!</span>
+                <span>TMS Client Pitch</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Slide Navigation Logic
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function updateSlide() {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Show active slide
+            const activeSlide = document.getElementById(`slide-${currentSlide}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+
+            // Update counter & progress bar
+            document.getElementById('slideIndicator').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+            const progressPercent = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progressPercent}%`;
+
+            // Update buttons state
+            document.getElementById('prevBtn').disabled = (currentSlide === 1);
+            document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+
+            // Re-render lucide icons if any
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Initialize Lucide Icons
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+            updateSlide();
+        });
+    </script>
+</body>
+</html>
