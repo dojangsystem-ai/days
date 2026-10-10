@@ -73,4 +73,4 @@ gantt
    - *Expression of Energy* (Kihap, pandangan mata, dan kepercayaan diri).
 
 ---
-[← Bab 4.2: Taegeuk 6 & 7 Jang](../04-sabuk-biru-dan-biru-strip/02-taegeuk-yook-jang-dan-chil-jang.md) | [Daftar Isi](../_index.md) | [Bab 5.2: Kyorugi & Kyukpa →](02-kyorugi-kyukpa-dan-hosinsool.md)
+[← Bab 4.3: UKT Sabuk Biru](../04-sabuk-biru-dan-biru-strip/03-materi-dan-standar-ukt-sabuk-biru.md) | [Daftar Isi](../_index.md) | [Bab 5.2: Kyorugi & Kyukpa →](02-kyorugi-kyukpa-dan-hosinsool.md)

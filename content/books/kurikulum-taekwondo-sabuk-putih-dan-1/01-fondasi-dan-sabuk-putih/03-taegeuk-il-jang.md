@@ -73,4 +73,4 @@ graph TD
 3. **Mendarat Kaki Setelah Ap Chagi:** Setelah menendang *Ap Chagi*, kaki mendarat terlebih dahulu baru melakukan pukulan, bukan mendarat bersamaan dengan pukulan.
 
 ---
-[← Bab 1.2: Kuda-kuda & Pukulan Dasar](02-kuda-kuda-dan-pukulan-dasar.md) | [Daftar Isi](../_index.md) | [Bab 2.1: Tendangan Dasar →](../02-sabuk-kuning-dan-kuning-strip/01-tendangan-dasar-dan-tangkisan.md)
+[← Bab 1.2: Kuda-kuda & Pukulan Dasar](02-kuda-kuda-dan-pukulan-dasar.md) | [Daftar Isi](../_index.md) | [Bab 1.4: UKT Sabuk Putih →](04-materi-dan-standar-ukt-sabuk-putih.md)

@@ -101,4 +101,4 @@ Lakukan latihan beruntun berikut:
 2. *Dwitkubi Hansonnal Makgi* -> *Dollyo Chagi* -> Mendarat *Apkubi Momtong Jiringi*.
 
 ---
-[← Bab 1.3: Taegeuk Il Jang](../01-fondasi-dan-sabuk-putih/03-taegeuk-il-jang.md) | [Daftar Isi](../_index.md) | [Bab 2.2: Taegeuk 2 & 3 Jang →](02-taegeuk-ee-jang-dan-sam-jang.md)
+[← Bab 1.4: UKT Sabuk Putih](../01-fondasi-dan-sabuk-putih/04-materi-dan-standar-ukt-sabuk-putih.md) | [Daftar Isi](../_index.md) | [Bab 2.2: Taegeuk 2 & 3 Jang →](02-taegeuk-ee-jang-dan-sam-jang.md)

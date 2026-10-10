@@ -80,4 +80,4 @@ quadrantChart
 ```
 
 ---
-[← Bab 2.1: Tendangan Dasar & Tangkisan](01-tendangan-dasar-dan-tangkisan.md) | [Daftar Isi](../_index.md) | [Bab 3.1: Teknik Samping & Memutar →](../03-sabuk-hijau-dan-hijau-strip/01-teknik-samping-dan-memutar.md)
+[← Bab 2.1: Tendangan Dasar & Tangkisan](01-tendangan-dasar-dan-tangkisan.md) | [Daftar Isi](../_index.md) | [Bab 2.3: UKT Sabuk Kuning →](03-materi-dan-standar-ukt-sabuk-kuning.md)

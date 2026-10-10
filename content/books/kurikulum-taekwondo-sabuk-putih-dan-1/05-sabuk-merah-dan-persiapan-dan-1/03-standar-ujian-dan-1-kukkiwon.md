@@ -74,4 +74,4 @@ Setelah lulus ujian Dan 1 dan menerima sertifikat resmi Kukkiwon World Taekwondo
 > *"Saya berjanji untuk menjunjung tinggi etika Taekwondo, menghormati pelatih dan senior, tidak menyalahgunakan seni membela diri ini untuk kejahatan, serta menjadi teladan keteladanan karakter di masyarakat."*
 
 ---
-[← Bab 5.2: Kyorugi & Kyukpa](02-kyorugi-kyukpa-dan-hosinsool.md) | [Daftar Isi](../_index.md)
+[← Bab 5.2: Kyorugi & Kyukpa](02-kyorugi-kyukpa-dan-hosinsool.md) | [Daftar Isi](../_index.md) | [Bab 5.4: UKT Sabuk Merah →](04-materi-dan-standar-ukt-sabuk-merah.md)

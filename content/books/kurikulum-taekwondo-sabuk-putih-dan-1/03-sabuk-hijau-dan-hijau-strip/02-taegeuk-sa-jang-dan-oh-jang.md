@@ -65,4 +65,4 @@ flowchart TD
    - Kuda-kuda silang di mana kaki belakang menyilang di belakang kaki depan dengan tumit diangkat.
 
 ---
-[← Bab 3.1: Teknik Samping & Memutar](01-teknik-samping-dan-memutar.md) | [Daftar Isi](../_index.md) | [Bab 4.1: Teknik Tingkat Menengah →](../04-sabuk-biru-dan-biru-strip/01-teknik-tingkat-menengah.md)
+[← Bab 3.1: Teknik Samping & Memutar](01-teknik-samping-dan-memutar.md) | [Daftar Isi](../_index.md) | [Bab 3.3: UKT Sabuk Hijau →](03-materi-dan-standar-ukt-sabuk-hijau.md)

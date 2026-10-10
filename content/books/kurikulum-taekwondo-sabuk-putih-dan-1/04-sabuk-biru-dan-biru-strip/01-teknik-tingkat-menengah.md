@@ -69,4 +69,4 @@ sequenceDiagram
 2. *Dwit Step Evade* -> *Counter Dwit Chagi* saat lawan maju.
 
 ---
-[← Bab 3.2: Taegeuk 4 & 5 Jang](../03-sabuk-hijau-dan-hijau-strip/02-taegeuk-sa-jang-dan-oh-jang.md) | [Daftar Isi](../_index.md) | [Bab 4.2: Taegeuk 6 & 7 Jang →](02-taegeuk-yook-jang-dan-chil-jang.md)
+[← Bab 3.3: UKT Sabuk Hijau](../03-sabuk-hijau-dan-hijau-strip/03-materi-dan-standar-ukt-sabuk-hijau.md) | [Daftar Isi](../_index.md) | [Bab 4.2: Taegeuk 6 & 7 Jang →](02-taegeuk-yook-jang-dan-chil-jang.md)

@@ -76,4 +76,4 @@ Pada tingkatan Geup 6, siswa dikenalkan pada simulasi pertarungan 1 langkah (*Ha
 ```
 
 ---
-[← Bab 2.2: Taegeuk 2 & 3 Jang](../02-sabuk-kuning-dan-kuning-strip/02-taegeuk-ee-jang-dan-sam-jang.md) | [Daftar Isi](../_index.md) | [Bab 3.2: Taegeuk 4 & 5 Jang →](02-taegeuk-sa-jang-dan-oh-jang.md)
+[← Bab 2.3: UKT Sabuk Kuning](../02-sabuk-kuning-dan-kuning-strip/03-materi-dan-standar-ukt-sabuk-kuning.md) | [Daftar Isi](../_index.md) | [Bab 3.2: Taegeuk 4 & 5 Jang →](02-taegeuk-sa-jang-dan-oh-jang.md)

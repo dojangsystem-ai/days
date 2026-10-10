@@ -76,4 +76,4 @@ classDiagram
 ```
 
 ---
-[← Bab 4.1: Teknik Tingkat Menengah](01-teknik-tingkat-menengah.md) | [Daftar Isi](../_index.md) | [Bab 5.1: Taegeuk 8 Jang & Pemantapan →](../05-sabuk-merah-dan-persiapan-dan-1/01-taegeuk-pal-jang-dan-pemantapan.md)
+[← Bab 4.1: Teknik Tingkat Menengah](01-teknik-tingkat-menengah.md) | [Daftar Isi](../_index.md) | [Bab 4.3: UKT Sabuk Biru →](03-materi-dan-standar-ukt-sabuk-biru.md)
