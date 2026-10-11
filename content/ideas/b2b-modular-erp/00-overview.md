@@ -114,6 +114,87 @@ Untuk mencegah jebakan arsitektur *spaghetti monolitik*, B2B Modular ERP didekom
 
 ---
 
+## 6. Model Pembiayaan, Estimasi Biaya (Capex/Opex) & Potensi Monetisasi SaaS
+
+Agar fleksibel bagi berbagai skala usaha (mulai dari toko grosir semi-manual hingga distributor regional dengan puluhan armada), B2B Modular ERP menerapkan dua pendekatan skema berlangganan: **A la Carte (Per Module)** dan **Paket Bundling (All-Module / Tiered Suite)**.
+
+### 6.1 Skema Berlangganan A la Carte (Per Module Pricing)
+Model ini ditujukan bagi bisnis yang ingin mengadopsi sistem secara bertahap tanpa harus membayar fitur yang belum mereka butuhkan.
+
+| Modul ERP | Harga Langganan (IDR/Bulan) | Kapasitas & Batasan Kuota | Cocok Untuk |
+| :--- | :---: | :--- | :--- |
+| **Core Platform & MDM (Wajib)** | **Gratis** *(Included)* | Multi-branch (hingga 2 cabang), 5 user seats awal, audit trail lengkap. | Pondasi seluruh tenant. |
+| **Inventory & Warehouse** | **Rp 350.000** | Multi-gudang (max 3 gudang), tracking quants, stock opname, unlimited SKU. | Bisnis yang fokus audit fisik gudang. |
+| **Penjualan B2B (Order-to-Cash)** | **Rp 350.000** | Validasi credit limit, cetak Surat Jalan & Faktur Penjualan, invoice aging. | Distributor dengan armada sales canvasser. |
+| **Kasir Ritel / Point of Sale (POS)** | **Rp 200.000** | 1 register kasir (tambahan register Rp 75rb/bln), mode offline sync, printer thermal. | Toko grosir yang melayani pembeli eceran/walk-in. |
+| **Pembelian (Procure-to-Pay)** | **Rp 300.000** | Alur PO, Surat Jalan Masuk (GRN), verifikasi audit 3-Way Matching. | Perusahaan dengan transaksi supplier rutin. |
+| **Akuntansi & General Ledger** | **Rp 450.000** | Jurnal otomatis transaksi, buku besar pembantu AP/AR, Neraca & Laba Rugi. | Bisnis yang ingin tutup buku instan. |
+| **Perpajakan & Integrasi Pajak** | **Rp 250.000** | Ekspor CSV e-Faktur, kalkulasi PPN/PPh otomatis, rekonsiliasi faktur pajak. | Perusahaan Kena Pajak (PKP). |
+| **Add-on: Tambahan User Seat** | **Rp 50.000 / seat** | Tambahan lisensi staf operasional aktif per bulan. | Tim dengan armada staf besar. |
+
+---
+
+### 6.2 Skema Berlangganan Bundling Paket (All-Module / Tiered Suite)
+Menawarkan efisiensi biaya hingga 30%–40% dibandingkan opsi a la carte, serta mendorong adopsi ekosistem penuh.
+
+| Tier Paket | Harga Bulanan (IDR) | Harga Tahunan (Diskon 2 Bulan) | Cakupan Modul | Target Skala Usaha |
+| :--- | :---: | :---: | :--- | :--- |
+| **Starter Trading** | **Rp 750.000** / bln | **Rp 7.500.000** / thn | • Core & MDM<br>• Inventory & Multi-Gudang<br>• Penjualan B2B (O2C)<br>• Pembelian (P2P)<br>*(Termasuk 5 User Seat, 2 Gudang)* | UKM Distributor pemula yang beralih dari Excel/kertas. |
+| **Retail & Wholesale Pro** | **Rp 1.250.000** / bln | **Rp 12.500.000** / thn | • Seluruh Modul Starter<br>• Modul Kasir / POS (2 Register)<br>• Modul Kas & Bank Operasional<br>*(Termasuk 10 User Seat, 4 Gudang)* | Toko grosir hybrid yang melayani B2B pesanan & toko ritel fisik. |
+| **Full ERP Enterprise Suite** | **Rp 1.950.000** / bln | **Rp 19.500.000** / thn | • Seluruh Modul (Core + MDM + Inventory + P2P + O2C + POS + Kas/Bank + General Ledger + AP/AR + Pajak e-Faktur)<br>*(Termasuk 20 User Seat, Unlimited Gudang)* | Distributor skala menengah mapan yang butuh laporan audit keuangan resmi. |
+| **Private Dedicated Cloud / On-Prem** | **Rp 5.500.000+** / bln | Custom Agreement | • Dedicated Database & Instance Isolated<br>• Unlimited Users & Cabang<br>• Kustomisasi Workflow & API Khusus<br>• Dedicated Account Manager & SLA 99.95% | Korporasi distribusi skala besar dengan regulasi data internal ketat. |
+
+---
+
+### 6.3 Estimasi Biaya Pengembangan (Capital Expenditure / Capex)
+
+Investasi awal untuk riset, rekayasa arsitektur sistem, pengembangan modul MVP, dan pengujian keamanan:
+
+| Komponen Investasi | Uraian Scope & Beban Kerja | Alokasi Waktu | Estimasi Biaya (IDR) |
+| :--- | :--- | :---: | :---: |
+| **Solution Architecture & Core Engine** | Desain domain-driven modular monolith, multi-tenancy RLS, sequence engine, dan skema database. | 3 minggu | Rp 35.000.000 |
+| **Backend Engineering (2 Senior Devs)** | Pengembangan modul Core, MDM, Inventory Quants, P2P, O2C, dan REST API. | 8 minggu | Rp 80.000.000 |
+| **Frontend & Mobile PWA Engineering** | Web dashboard Next.js, POS checkout UI, dan PWA barcode scanner gudang. | 8 minggu | Rp 50.000.000 |
+| **UI/UX Design System & Prototyping** | Desain Figma komprehensif, design token, dan interaksi layar kasir POS & scanner. | 4 minggu | Rp 20.000.000 |
+| **Quality Assurance (QA) & Security Audit** | Otomasi pengujian race-condition inventaris, uji penetrasi RBAC, dan validasi beban (stress-testing). | 3 minggu | Rp 20.000.000 |
+| **Infrastruktur Setup & Legalitas** | Konfigurasi CI/CD, sertifikasi SSL/domain, pendaftaran HAKI & izin PSE Kominfo. | - | Rp 15.000.000 |
+| **Total Capex (Investasi R&D Awal)** | | **10 Minggu** | **Rp 220.000.000** |
+
+---
+
+### 6.4 Estimasi Biaya Operasional Rutin (Operational Expenditure / Opex)
+
+Biaya rutin bulanan untuk menjaga stabilitas infrastruktur cloud multi-tenant dan dukungan operasional:
+
+| Komponen Opex | Deskripsi & Provider Layanan | Biaya / Bulan (IDR) |
+| :--- | :--- | :---: |
+| **Cloud App Servers & Gateway** | VPS Cluster / Kubernetes Node (High-Availability reverse proxy, load balancer) | Rp 3.500.000 |
+| **Managed Database PostgreSQL** | High-availability PostgreSQL dengan automated daily backup & point-in-time recovery | Rp 4.500.000 |
+| **Redis In-Memory Cluster** | Redis Cache & Distributed Lock (`Redlock`) untuk proteksi *race-condition* stok | Rp 1.500.000 |
+| **Object Storage & CDN** | AWS S3 / Cloudflare R2 untuk penyimpanan PDF faktur, bukti bayar, dan barcode | Rp 800.000 |
+| **Third-Party Monitoring & SaaS** | Sentry (Error tracking), Logtail, GitHub Enterprise, Postmark (Email invoice otomatis) | Rp 1.200.000 |
+| **DevOps & Security Maintenance** | On-call DevOps support, patch security, dan pemantauan latensi P95 harian | Rp 6.000.000 |
+| **Total Fixed Opex Platform** | *(Kapasitas hingga 150 tenant aktif)* | **Rp 17.500.000 / bln** |
+
+---
+
+### 6.5 Proyeksi Pendapatan (MRR / ARR) & Titik Impas (Break-Even Point)
+
+Dengan asumsi bauran pelanggan (*client mix*): 40% Starter Trading (Rp 750rb), 35% Retail & Wholesale Pro (Rp 1.250jt), dan 25% Full ERP Suite (Rp 1.950jt), diperoleh rata-rata pendapatan per tenant (**ARPU / Average Revenue Per User**) sebesar **~Rp 1.225.000 / bulan**.
+
+| Target Pertumbuhan | Jumlah Tenant Aktif | Monthly Recurring Revenue (MRR) | Annual Recurring Revenue (ARR) | Net Profit Operasional (Setelah Opex) |
+| :---: | :---: | :---: | :---: | :---: |
+| **Bulan ke-3 (Early Adopters)** | 20 Perusahaan | Rp 24.500.000 | Rp 294.000.000 | +Rp 7.000.000 / bln |
+| **Bulan ke-6 (Growth)** | 50 Perusahaan | Rp 61.250.000 | Rp 735.000.000 | +Rp 43.750.000 / bln |
+| **Bulan ke-12 (Scale)** | 120 Perusahaan | Rp 147.000.000 | Rp 1.764.000.000 | +Rp 129.500.000 / bln |
+| **Bulan ke-24 (Maturity)** | 300 Perusahaan | Rp 367.500.000 | Rp 4.410.000.000 | +Rp 350.000.000 / bln |
+
+#### Analisis Break-Even Point (BEP):
+1. **BEP Operasional Bulanan:** Tercapai dengan hanya **15 tenant aktif** (`15 x Rp 1.225.000 = Rp 18.375.000 > Opex Rp 17.500.000`).
+2. **BEP Investasi Awal (Capex Rp 220.000.000):** Tercapai pada **Bulan ke-8 hingga ke-9** sejak peluncuran komersial, dengan asumsi pertumbuhan moderat penambahan 8–10 tenant baru per bulan.
+
+---
+
 ## Navigasi Dokumen & Modul
 
 | Navigasi | Tautan Dokumen |
@@ -122,4 +203,5 @@ Untuk mencegah jebakan arsitektur *spaghetti monolitik*, B2B Modular ERP didekom
 | **Arsitektur Sistem & Tech Stack** | [01-architecture-and-techstack.md →](01-architecture-and-techstack.md) |
 | **Katalog Fitur & Spesifikasi Modul** | [features/README.md →](features/README.md) |
 | **Roadmap Implementasi & Milestones** | [roadmap.md →](roadmap.md) |
+
 
