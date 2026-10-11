@@ -83,13 +83,13 @@ Memberdayakan pelanggan dengan akses mandiri dan membantu manajemen meramalkan k
 
 ## 3. Komersialisasi & Monetisasi Berlangganan (GTM Packaging)
 
-Setiap milestone pengembangan dihubungkan langsung dengan paket rilis komersial:
+Setiap milestone pengembangan dihubungkan langsung dengan peluncuran tier komersial bertahap:
 
-1. **Rilis MVP (Bulan ke-2):** Meluncurkan **Paket Starter Trading (Rp 750.000 / bln)** dan skema **A la Carte Modul Stok & Penjualan (@ Rp 350.000 / bln)** untuk 20 pilot distributor pertama.
-2. **Rilis Phase 1 (Bulan ke-5):** Meluncurkan **Paket Retail & Wholesale Pro (Rp 1.250.000 / bln)** dengan integrasi modul Kasir POS dan modul Akuntansi Otomatis. Target mencapai BEP operasional bulanan (15 tenant).
-3. **Rilis Phase 2 (Bulan ke-9):** Meluncurkan **Full ERP Enterprise Suite (Rp 1.950.000 / bln)** dan **Dedicated Private Cloud (Rp 5.500.000+ / bln)**. Target mencapai BEP Capex investasi awal (Rp 220.000.000).
+1. **Rilis MVP (Bulan ke-2):** Meluncurkan paket **Starter (Rp 299.000 / bln)** untuk toko rintisan dan paket **Basic — UMKM (Rp 699.000 / bln)** untuk toko grosir dan distributor kecil (target 25 pilot tenant pertama).
+2. **Rilis Phase 1 (Bulan ke-5):** Meluncurkan paket **Standard (Rp 1.499.000 / bln)** dengan integrasi mobile barcode scanner gudang, modul kas/bank, dan jurnal akuntansi otomatis. Target melampaui BEP operasional bulanan (18 tenant aktif).
+3. **Rilis Phase 2 (Bulan ke-9):** Meluncurkan paket **Premium (Rp 2.899.000 / bln)** dan **Custom / Enterprise (Rp 7.500.000+ / bln)** dengan portal B2B pelanggan mandiri, integrasi pajak e-Faktur DJP, dan private cloud isolation. Target mencapai BEP Capex investasi awal (Rp 220.000.000).
 
-*(Rincian lengkap perhitungan Capex, Opex, dan skema harga a la carte dapat dipelajari di [00-overview.md#6-model-pembiayaan-estimasi-biaya-capexopex--potensi-monetisasi-saas](00-overview.md)).*
+*(Rincian matriks fitur dan unit economics 5 tier dapat dipelajari di [00-overview.md#6-model-pembiayaan-estimasi-biaya-capexopex--skema-berlangganan-saas-tiers](00-overview.md)).*
 
 ---
 

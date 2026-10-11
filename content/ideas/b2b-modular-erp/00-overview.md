@@ -114,61 +114,158 @@ Untuk mencegah jebakan arsitektur *spaghetti monolitik*, B2B Modular ERP didekom
 
 ---
 
-## 6. Model Pembiayaan, Estimasi Biaya (Capex/Opex) & Potensi Monetisasi SaaS
+## 6. Model Pembiayaan, Estimasi Biaya (Capex/Opex) & Skema Berlangganan (SaaS Tiers)
 
-Agar fleksibel bagi berbagai skala usaha (mulai dari toko grosir semi-manual hingga distributor regional dengan puluhan armada), B2B Modular ERP menerapkan dua pendekatan skema berlangganan: **A la Carte (Per Module)** dan **Paket Bundling (All-Module / Tiered Suite)**.
-
-### 6.1 Skema Berlangganan A la Carte (Per Module Pricing)
-Model ini ditujukan bagi bisnis yang ingin mengadopsi sistem secara bertahap tanpa harus membayar fitur yang belum mereka butuhkan.
-
-| Modul ERP | Harga Langganan (IDR/Bulan) | Kapasitas & Batasan Kuota | Cocok Untuk |
-| :--- | :---: | :--- | :--- |
-| **Core Platform & MDM (Wajib)** | **Gratis** *(Included)* | Multi-branch (hingga 2 cabang), 5 user seats awal, audit trail lengkap. | Pondasi seluruh tenant. |
-| **Inventory & Warehouse** | **Rp 350.000** | Multi-gudang (max 3 gudang), tracking quants, stock opname, unlimited SKU. | Bisnis yang fokus audit fisik gudang. |
-| **Penjualan B2B (Order-to-Cash)** | **Rp 350.000** | Validasi credit limit, cetak Surat Jalan & Faktur Penjualan, invoice aging. | Distributor dengan armada sales canvasser. |
-| **Kasir Ritel / Point of Sale (POS)** | **Rp 200.000** | 1 register kasir (tambahan register Rp 75rb/bln), mode offline sync, printer thermal. | Toko grosir yang melayani pembeli eceran/walk-in. |
-| **Pembelian (Procure-to-Pay)** | **Rp 300.000** | Alur PO, Surat Jalan Masuk (GRN), verifikasi audit 3-Way Matching. | Perusahaan dengan transaksi supplier rutin. |
-| **Akuntansi & General Ledger** | **Rp 450.000** | Jurnal otomatis transaksi, buku besar pembantu AP/AR, Neraca & Laba Rugi. | Bisnis yang ingin tutup buku instan. |
-| **Perpajakan & Integrasi Pajak** | **Rp 250.000** | Ekspor CSV e-Faktur, kalkulasi PPN/PPh otomatis, rekonsiliasi faktur pajak. | Perusahaan Kena Pajak (PKP). |
-| **Add-on: Tambahan User Seat** | **Rp 50.000 / seat** | Tambahan lisensi staf operasional aktif per bulan. | Tim dengan armada staf besar. |
+Untuk menjangkau spektrum pelaku usaha yang luas di Indonesia—mulai dari toko grosir mandiri hingga distributor regional berskala korporat—B2B Modular ERP menerapkan skema pembiayaan bertingkat yang relevan dengan kapasitas finansial dan kompleksitas operasional tiap segmen: **Starter**, **Basic (UMKM)**, **Standard**, **Premium**, dan **Custom / Enterprise**.
 
 ---
 
-### 6.2 Skema Berlangganan Bundling Paket (All-Module / Tiered Suite)
-Menawarkan efisiensi biaya hingga 30%–40% dibandingkan opsi a la carte, serta mendorong adopsi ekosistem penuh.
+### 6.1 Rincian Skema Paket Berlangganan (Subscription Tiers)
 
-| Tier Paket | Harga Bulanan (IDR) | Harga Tahunan (Diskon 2 Bulan) | Cakupan Modul | Target Skala Usaha |
-| :--- | :---: | :---: | :--- | :--- |
-| **Starter Trading** | **Rp 750.000** / bln | **Rp 7.500.000** / thn | • Core & MDM<br>• Inventory & Multi-Gudang<br>• Penjualan B2B (O2C)<br>• Pembelian (P2P)<br>*(Termasuk 5 User Seat, 2 Gudang)* | UKM Distributor pemula yang beralih dari Excel/kertas. |
-| **Retail & Wholesale Pro** | **Rp 1.250.000** / bln | **Rp 12.500.000** / thn | • Seluruh Modul Starter<br>• Modul Kasir / POS (2 Register)<br>• Modul Kas & Bank Operasional<br>*(Termasuk 10 User Seat, 4 Gudang)* | Toko grosir hybrid yang melayani B2B pesanan & toko ritel fisik. |
-| **Full ERP Enterprise Suite** | **Rp 1.950.000** / bln | **Rp 19.500.000** / thn | • Seluruh Modul (Core + MDM + Inventory + P2P + O2C + POS + Kas/Bank + General Ledger + AP/AR + Pajak e-Faktur)<br>*(Termasuk 20 User Seat, Unlimited Gudang)* | Distributor skala menengah mapan yang butuh laporan audit keuangan resmi. |
-| **Private Dedicated Cloud / On-Prem** | **Rp 5.500.000+** / bln | Custom Agreement | • Dedicated Database & Instance Isolated<br>• Unlimited Users & Cabang<br>• Kustomisasi Workflow & API Khusus<br>• Dedicated Account Manager & SLA 99.95% | Korporasi distribusi skala besar dengan regulasi data internal ketat. |
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        HIERARKI TIER BERLANGGANAN B2B MODULAR ERP                      │
+├───────────────┬──────────────────┬─────────────────┬─────────────────┬────────────────┤
+│ 1. STARTER    │ 2. BASIC (UMKM)  │ 3. STANDARD     │ 4. PREMIUM      │ 5. CUSTOM      │
+│ Rp 299 rb/bln │ Rp 699 rb/bln    │ Rp 1.499 rb/bln │ Rp 2.899 rb/bln │ Rp 7.500 rb/bln│
+│ Toko Rintisan │ Toko Grosir/UKM  │ Distributor B2B │ Dist. Regional  │ Korporat/Holding│
+│ 1 Gudang/2 User│ 2 Gudang/5 User │ 5 Gudang/15 User│ Unl. Gudang/35  │ Private Cloud  │
+└───────────────┴──────────────────┴─────────────────┴─────────────────┴────────────────┘
+```
+
+#### Tier 1: Starter (Usaha Rintisan / Solopreneur)
+- **Harga Berlangganan:** **Rp 299.000 / bulan** (atau **Rp 2.990.000 / tahun** — Hemat 2 Bulan).
+- **Target Segmen:** Toko kelontong grosir pemula, kios semi-eceran, atau agen mandiri yang baru bertransisi dari buku catatan manual/Excel.
+- **Cakupan Modul:**
+  - Core Multi-Tenant & Master Data Management (Produk & Kontak Mitra).
+  - Manajemen Persediaan Dasar (Maksimal 1 Gudang / Toko, batas 500 SKU).
+  - Kasir POS Ritel Cepat (1 Register Kasir) dengan cetak struk nota kasir thermal.
+  - Penjualan Kasir Tunai & QRIS statis.
+- **Batasan Kuota:** 2 Pengguna (*User Seats*), 1 Cabang/Gudang, kuota hingga 300 transaksi/bulan.
+- **Dukungan Layanan:** Onboarding mandiri via video tutorial, *Email Support* (SLA respons 24 jam kerja).
 
 ---
 
-### 6.3 Estimasi Biaya Pengembangan (Capital Expenditure / Capex)
+#### Tier 2: Basic — Khusus UMKM (Toko Grosir & Distributor Kecil)
+- **Harga Berlangganan:** **Rp 699.000 / bulan** (atau **Rp 6.990.000 / tahun** — Hemat 2 Bulan).
+- **Target Segmen:** UKM grosir bahan bangunan, sembako/FMCG lokal, distributor alat tulis/listrik dengan alur pemisahan staf toko, gudang, dan sales.
+- **Cakupan Modul:**
+  - **Seluruh fitur Tier Starter.**
+  - **Multi-Gudang Dasar:** Hingga 2 Gudang fisik, pelacakan stok *on-hand* vs *reserved*, mutasi transfer barang antar-gudang, dan stok opname.
+  - **Penjualan B2B (Order-to-Cash):** Pembuatan Sales Order (SO), penerbitan Surat Jalan (Delivery Order / DO) resmi, Faktur Penjualan (Customer Invoice), dan validasi batas kredit (*credit limit* pelanggan).
+  - **Pembelian (Procure-to-Pay Dasar):** Penerbitan PO ke supplier, pencatatan Surat Jalan Masuk (Goods Receipt / GRN), dan pencatatan tagihan vendor (*Vendor Bill*).
+  - **Piutang & Hutang (AR/AP Dasar):** Pemantauan tagihan belum lunas dan jadwal jatuh tempo pembayaran invoice.
+- **Batasan Kuota:** 5 Pengguna (*User Seats*), 2 Gudang fisik, kuota hingga 1.500 transaksi/bulan, unlimited SKU produk.
+- **Dukungan Layanan:** Onboarding terpandu via Google Meet (1 sesi 60 menit), *WhatsApp Support* jam kerja (SLA respons 4 jam).
 
-Investasi awal untuk riset, rekayasa arsitektur sistem, pengembangan modul MVP, dan pengujian keamanan:
+---
 
-| Komponen Investasi | Uraian Scope & Beban Kerja | Alokasi Waktu | Estimasi Biaya (IDR) |
+#### Tier 3: Standard (Distributor Menengah / Multi-Cabang)
+- **Harga Berlangganan:** **Rp 1.499.000 / bulan** (atau **Rp 14.990.000 / tahun** — Hemat 2 Bulan).
+- **Target Segmen:** Perusahaan distributor berkembang dengan tim sales canvasser lapangan, multi-cabang kota, dan kebutuhan pembukuan keuangan terintegrasi otomatis.
+- **Cakupan Modul:**
+  - **Seluruh fitur Tier Basic (UMKM).**
+  - **Multi-Cabang & Multi-Gudang:** Hingga 3 Cabang resmi, 5 Gudang penyimpanan.
+  - **Aplikasi Mobile Gudang (PWA Barcode Scanner):** Staf gudang dapat memindai barcode fisik saat penerimaan barang (GRN) dan picking barang keluar langsung dari smartphone.
+  - **Pengadaan Lanjut & 3-Way Matching:** Verifikasi kesesuaian kuantitas & harga antara PO, GRN fisik, dan tagihan faktur vendor sebelum pembayaran disetujui.
+  - **Manajemen Kas & Bank:** Pembukuan kas kecil (*petty cash*), mutasi bank operasional, dan rekonsiliasi kas/bank.
+  - **Akuntansi Umum & Jurnal Otomatis:** Otomasi penjurnalan HPP saat barang dikirim (DO), pencatatan persediaan, serta laporan keuangan standar (Neraca & Laba Rugi / P&L).
+  - **Daftar Harga Bertingkat (*Tiered Price List*):** Harga khusus per level pelanggan (Grosir Besar, Semi-Grosir, Toko Ritel).
+- **Batasan Kuota:** 15 Pengguna (*User Seats*), 3 Cabang, 5 Gudang, kuota hingga 5.000 transaksi/bulan.
+- **Dukungan Layanan:** Onboarding tim 2 sesi, *Priority WhatsApp Support* (SLA respons 1 jam kerja).
+
+---
+
+#### Tier 4: Premium (Distributor Regional & Enterprise UKM Mapan)
+- **Harga Berlangganan:** **Rp 2.899.000 / bulan** (atau **Rp 28.990.000 / tahun** — Hemat 2 Bulan).
+- **Target Segmen:** Distributor regional mapan dengan puluhan armada pengiriman, omzet miliaran per bulan, kebutuhan audit keuangan resmi, dan integrasi pajak negara.
+- **Cakupan Modul:**
+  - **Seluruh fitur Tier Standard.**
+  - **Kapasitas Unlimited:** Unlimited cabang, unlimited gudang, dan unlimited kuota transaksi dokumen.
+  - **B2B Customer Self-Service Portal:** Klien grosir memiliki akun login mandiri untuk melihat sisa plafon kredit, mengecek riwayat tagihan, dan memasukkan *purchase order* mandiri 24/7.
+  - **Integrasi Pajak e-Faktur DJP:** Perhitungan otomatis PPN 11%/PPh dan ekspor berkas CSV format resmi DJP e-Faktur.
+  - **Analitik Kebutuhan Stok Otomatis (*Reorder Point & Safety Stock*):** Rekomendasi pembelian otomatis berdasarkan tren kecepatan penjualan (*lead time demand forecast*).
+  - **Approval Workflow Bertingkat:** Otorisasi berjenjang (Supervisor -> Manager -> Direktur) untuk transaksi bernilai tinggi atau persetujuan batas kredit macet.
+  - **Audit Trail Forensik:** Log aktivitas detail per milidetik yang merekam data sebelum vs sesudah perubahan untuk kepatuhan audit eksternal.
+- **Batasan Kuota:** 35 Pengguna (*User Seats*), Unlimited Cabang/Gudang, 50 GB Penyimpanan cloud (lampiran PDF/foto DO & bukti bayar).
+- **Dukungan Layanan:** *Dedicated Customer Success Manager*, Pelatihan staf on-site/remote berkala, SLA Uptime 99.9%.
+
+---
+
+#### Tier 5: Custom / Enterprise (Korporasi, Holding & Private Cloud)
+- **Harga Berlangganan:** **Mulai dari Rp 7.500.000 / bulan** (SaaS Private Cloud) atau **Lisensi On-Premise + Annual Maintenance Contract (AMC 20%/tahun)**.
+- **Target Segmen:** Perusahaan distribusi prinsipal/manufaktur besar, holding multi-badan hukum PT, atau institusi yang mewajibkan penempatan data di server internal.
+- **Cakupan Kustomisasi:**
+  - **Infrastruktur Terisolasi (Single-Tenant Private Cloud / On-Premise VM):** Database dan instance aplikasi terpisah penuh tanpa berbagi resource (*isolated instance*).
+  - **Kustomisasi Modul Khusus:** Modul Manufaktur/BOM perakitan, pelacakan GPS armada truk pengiriman, atau integrasi webhook dua arah ke sistem internal legacy (SAP, Oracle, AS400).
+  - **Multi-Company / Multi-PT Holding:** Konsolidasi laporan keuangan lintas entitas anak perusahaan dalam satu dashboard induk.
+  - **Custom SLA & BCP:** Service Level Agreement 99.95% dengan *Business Continuity Plan* dan *Disaster Recovery*.
+- **Batasan Kuota:** Unlimited Pengguna, Dedicated Compute/Memory Node, Custom Storage Sizing.
+- **Dukungan Layanan:** *Dedicated Technical Account Manager*, Tim implementasi on-site, kustomisasi SLA respon 15 menit 24/7.
+
+---
+
+### 6.2 Matriks Perbandingan Fitur Antar-Paket
+
+| Modul & Kapasitas Fitur | Starter | Basic (UMKM) | Standard | Premium | Custom / Enterprise |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Harga Bulanan (IDR)** | **Rp 299.000** | **Rp 699.000** | **Rp 1.499.000** | **Rp 2.899.000** | **Rp 7.500.000+** |
+| **Harga Tahunan (Hemat 2 Bln)**| **Rp 2.990.000** | **Rp 6.990.000** | **Rp 14.990.000** | **Rp 28.990.000** | *Custom SLA* |
+| **Jumlah User Seats** | 2 User | 5 User | 15 User | 35 User | Unlimited |
+| **Jumlah Gudang Fisik** | 1 Gudang | 2 Gudang | 5 Gudang | Unlimited | Unlimited |
+| **Batas Cabang Bisnis** | 1 Cabang | 1 Cabang | 3 Cabang | Unlimited | Multi-PT Holding |
+| **Batas Transaksi Dokumen/Bln** | 300 Dokumen | 1.500 Dokumen | 5.000 Dokumen | Unlimited | Unlimited |
+| **Katalog SKU Produk** | Maks 500 SKU | Unlimited | Unlimited | Unlimited | Unlimited |
+| **Kasir POS Ritel & Nota Kasir**| Ya (1 Register)| Ya (1 Register)| Ya (3 Register)| Ya (Unlimited) | Ya (Custom POS) |
+| **Penjualan Grosir B2B (SO/DO)** | - | Ya | Ya | Ya | Ya |
+| **Kontrol Plafon Kredit Klien** | - | Ya | Ya | Ya | Ya |
+| **Pengadaan Pemasok (PO/GRN)** | - | Ya | Ya (3-Way Match)| Ya (3-Way Match)| Ya (3-Way Match)|
+| **Mobile Barcode Scanner PWA**| - | - | Ya | Ya | Ya |
+| **Kas/Bank & Rekonsiliasi** | - | - | Ya | Ya | Ya |
+| **Jurnal Otomatis & Akuntansi**| - | - | Ya | Ya | Ya |
+| **Daftar Harga Bertingkat** | - | - | Ya | Ya | Ya |
+| **Portal Klien B2B Mandiri** | - | - | - | Ya | Ya |
+| **Ekspor Pajak e-Faktur DJP** | - | - | - | Ya | Ya |
+| **Otomasi Reorder Point** | - | - | - | Ya | Ya |
+| **Approval Berjenjang & Audit**| - | - | - | Ya | Ya |
+| **Infrastruktur Dedicated** | Shared Multi-Tenant | Shared Multi-Tenant | Shared Multi-Tenant | Shared High-Perf | Dedicated Node / On-Prem |
+
+---
+
+### 6.3 Add-On Fleksibel (Opsi Penambahan Kuota)
+
+Untuk pelanggan yang membutuhkan kapasitas lebih tanpa harus langsung *upgrade* ke tier di atasnya:
+- **Tambahan User Seat:** Rp 45.000 / user / bulan.
+- **Tambahan Gudang Fisik:** Rp 150.000 / gudang / bulan.
+- **Tambahan Register Kasir POS:** Rp 75.000 / register / bulan.
+- **Penyimpanan Dokumen Tambahan (Cloud Storage):** Rp 50.000 / 25 GB / bulan.
+- **Paket WhatsApp Notification Gateway API:** Rp 150.000 / 1.000 pesan (notifikasi status kiriman SO dan pengingat jatuh tempo tagihan).
+
+---
+
+### 6.4 Estimasi Biaya Pengembangan Sistem (Capital Expenditure / Capex)
+
+Investasi awal untuk pengembangan rekayasa perangkat lunak MVP (Bulan 1–2.5):
+
+| Komponen Investasi | Alokasi SDM & Scope Pekerjaan | Waktu Pengerjaan | Estimasi Biaya (IDR) |
 | :--- | :--- | :---: | :---: |
-| **Solution Architecture & Core Engine** | Desain domain-driven modular monolith, multi-tenancy RLS, sequence engine, dan skema database. | 3 minggu | Rp 35.000.000 |
-| **Backend Engineering (2 Senior Devs)** | Pengembangan modul Core, MDM, Inventory Quants, P2P, O2C, dan REST API. | 8 minggu | Rp 80.000.000 |
-| **Frontend & Mobile PWA Engineering** | Web dashboard Next.js, POS checkout UI, dan PWA barcode scanner gudang. | 8 minggu | Rp 50.000.000 |
-| **UI/UX Design System & Prototyping** | Desain Figma komprehensif, design token, dan interaksi layar kasir POS & scanner. | 4 minggu | Rp 20.000.000 |
-| **Quality Assurance (QA) & Security Audit** | Otomasi pengujian race-condition inventaris, uji penetrasi RBAC, dan validasi beban (stress-testing). | 3 minggu | Rp 20.000.000 |
-| **Infrastruktur Setup & Legalitas** | Konfigurasi CI/CD, sertifikasi SSL/domain, pendaftaran HAKI & izin PSE Kominfo. | - | Rp 15.000.000 |
+| **Principal Software Architect** | Desain arsitektur Modular Monolith, isolasi tenancy RLS, engine sequence, dan skema database. | 3 minggu | Rp 35.000.000 |
+| **Senior Backend Engineers (2 Pax)** | Pengembangan modul Core, MDM, Inventory Quants, P2P, O2C, serta API endpoints transaksional. | 8 minggu | Rp 80.000.000 |
+| **Frontend & Mobile PWA Engineers (2 Pax)** | Web Admin Dashboard Next.js, POS cashier interface, dan PWA barcode scanner gudang. | 8 minggu | Rp 50.000.000 |
+| **UI/UX Designer** | Pembuatan Design System Figma, interaksi layar POS, responsive layout dashboard. | 4 minggu | Rp 20.000.000 |
+| **QA Automation & Security Engineer** | Stress testing penguncian stok konkuren (Redis lock), audit isolasi multi-tenant, testing RBAC. | 3 minggu | Rp 20.000.000 |
+| **Infrastruktur, Domain & Legalitas** | CI/CD setup, domain & SSL enterprise, pendaftaran HAKI merek dagang & sertifikasi PSE Kominfo. | - | Rp 15.000.000 |
 | **Total Capex (Investasi R&D Awal)** | | **10 Minggu** | **Rp 220.000.000** |
 
 ---
 
-### 6.4 Estimasi Biaya Operasional Rutin (Operational Expenditure / Opex)
+### 6.5 Estimasi Biaya Operasional Rutin (Operational Expenditure / Opex)
 
 Biaya rutin bulanan untuk menjaga stabilitas infrastruktur cloud multi-tenant dan dukungan operasional:
 
 | Komponen Opex | Deskripsi & Provider Layanan | Biaya / Bulan (IDR) |
 | :--- | :--- | :---: |
-| **Cloud App Servers & Gateway** | VPS Cluster / Kubernetes Node (High-Availability reverse proxy, load balancer) | Rp 3.500.000 |
+| **Cloud App Servers & API Cluster** | VPS Cluster / Kubernetes Node (High-Availability reverse proxy, load balancer) | Rp 3.500.000 |
 | **Managed Database PostgreSQL** | High-availability PostgreSQL dengan automated daily backup & point-in-time recovery | Rp 4.500.000 |
 | **Redis In-Memory Cluster** | Redis Cache & Distributed Lock (`Redlock`) untuk proteksi *race-condition* stok | Rp 1.500.000 |
 | **Object Storage & CDN** | AWS S3 / Cloudflare R2 untuk penyimpanan PDF faktur, bukti bayar, dan barcode | Rp 800.000 |
@@ -178,20 +275,27 @@ Biaya rutin bulanan untuk menjaga stabilitas infrastruktur cloud multi-tenant da
 
 ---
 
-### 6.5 Proyeksi Pendapatan (MRR / ARR) & Titik Impas (Break-Even Point)
+### 6.6 Proyeksi Pendapatan (MRR / ARR) & Titik Impas (Break-Even Point)
 
-Dengan asumsi bauran pelanggan (*client mix*): 40% Starter Trading (Rp 750rb), 35% Retail & Wholesale Pro (Rp 1.250jt), dan 25% Full ERP Suite (Rp 1.950jt), diperoleh rata-rata pendapatan per tenant (**ARPU / Average Revenue Per User**) sebesar **~Rp 1.225.000 / bulan**.
+Dengan bauran pelanggan tipikal (*client mix*): 
+- 25% Starter (Rp 299rb)
+- 40% Basic UMKM (Rp 699rb)
+- 25% Standard (Rp 1.499jt)
+- 10% Premium (Rp 2.899jt)
+
+Diperoleh rata-rata nilai pendapatan per tenant (**ARPU / Average Revenue Per User**) sebesar **~Rp 1.019.000 / bulan**.
 
 | Target Pertumbuhan | Jumlah Tenant Aktif | Monthly Recurring Revenue (MRR) | Annual Recurring Revenue (ARR) | Net Profit Operasional (Setelah Opex) |
 | :---: | :---: | :---: | :---: | :---: |
-| **Bulan ke-3 (Early Adopters)** | 20 Perusahaan | Rp 24.500.000 | Rp 294.000.000 | +Rp 7.000.000 / bln |
-| **Bulan ke-6 (Growth)** | 50 Perusahaan | Rp 61.250.000 | Rp 735.000.000 | +Rp 43.750.000 / bln |
-| **Bulan ke-12 (Scale)** | 120 Perusahaan | Rp 147.000.000 | Rp 1.764.000.000 | +Rp 129.500.000 / bln |
-| **Bulan ke-24 (Maturity)** | 300 Perusahaan | Rp 367.500.000 | Rp 4.410.000.000 | +Rp 350.000.000 / bln |
+| **Bulan ke-3 (Early Adopters)** | 25 Perusahaan | Rp 25.475.000 | Rp 305.700.000 | **+Rp 7.975.000 / bln** |
+| **Bulan ke-6 (Growth)** | 60 Perusahaan | Rp 61.140.000 | Rp 733.680.000 | **+Rp 43.640.000 / bln** |
+| **Bulan ke-12 (Scale)** | 140 Perusahaan | Rp 142.660.000 | Rp 1.711.920.000 | **+Rp 125.160.000 / bln** |
+| **Bulan ke-24 (Maturity)** | 350 Perusahaan | Rp 356.650.000 | Rp 4.279.800.000 | **+Rp 339.150.000 / bln** |
 
 #### Analisis Break-Even Point (BEP):
-1. **BEP Operasional Bulanan:** Tercapai dengan hanya **15 tenant aktif** (`15 x Rp 1.225.000 = Rp 18.375.000 > Opex Rp 17.500.000`).
-2. **BEP Investasi Awal (Capex Rp 220.000.000):** Tercapai pada **Bulan ke-8 hingga ke-9** sejak peluncuran komersial, dengan asumsi pertumbuhan moderat penambahan 8–10 tenant baru per bulan.
+1. **BEP Operasional Bulanan:** Tercapai dengan hanya **18 tenant aktif** (`18 x Rp 1.019.000 = Rp 18.342.000 > Opex Rp 17.500.000`).
+2. **BEP Investasi Awal (Capex Rp 220.000.000):** Tercapai pada **Bulan ke-8 hingga ke-9** sejak peluncuran komersial, dengan asumsi akuisisi moderat 10–12 tenant baru per bulan.
+
 
 ---
 
