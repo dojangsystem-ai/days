@@ -24,7 +24,7 @@ gantt
     section MVP Core Launch
     Portal Registrasi dan Payment        :done, mvp1, 2026-11-01, 14d
     Algoritma Drawing Bagan              :done, mvp2, 2026-11-15, 14d
-    Call Room Dispatch Module            :active, mvp3, 2026-12-01, 14d
+    Modul Call Room Dispatch             :active, mvp3, 2026-12-01, 14d
     Medal Recap dan Result Book PDF      :mvp4, 2026-12-15, 14d
     
     section Phase 1 Enhancements
