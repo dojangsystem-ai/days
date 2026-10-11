@@ -78,3 +78,44 @@ Each feature spec MUST contain:
 - **MVP Milestone:** Mandatory core features required for launch.
 - **Phase 1 (Post-MVP):** Key enhancements and scaling.
 - **Phase 2 (Long-Term):** Advanced integrations and optimizations.
+
+### 3. Sequential Document & Module Navigation Footer
+Untuk memudahkan penelusuran dokumen PRD dan antar-fitur tanpa memperlakukannya sebagai buku, setiap berkas di dalam `content/ideas/<app-name>/` WAJIB menyertakan footer navigasi relatif di baris paling bawah:
+
+- **Pada `00-overview.md`:**
+  ```markdown
+  ---
+
+  ## Navigasi Dokumen
+
+  [Ikhtisar Sistem (Overview)](00-overview.md) | [Arsitektur & Tech Stack →](01-architecture-and-techstack.md)
+  ```
+
+- **Pada `01-architecture-and-techstack.md`:**
+  ```markdown
+  ---
+
+  ## Navigasi Dokumen
+
+  [← Ikhtisar Sistem (Overview)](00-overview.md) | [Spesifikasi Fitur Pertama (FR-01) →](features/FR-01-user-authentication.md)
+  ```
+
+- **Pada `features/FR-<number>-<feature-name>.md`:**
+  ```markdown
+  ---
+
+  ## Navigasi Modul & Fitur
+
+  [← Fitur Sebelumnya](FR-prev.md) | [Ikhtisar Sistem](../00-overview.md) | [Fitur Selanjutnya →](FR-next.md)
+  ```
+  *(Catatan: Untuk FR-01, tautan "Fitur Sebelumnya" mengarah ke `../01-architecture-and-techstack.md`. Untuk FR terakhir, tautan "Fitur Selanjutnya" mengarah ke `../roadmap.md`).*
+
+- **Pada `roadmap.md`:**
+  ```markdown
+  ---
+
+  ## Navigasi Dokumen
+
+  [← Fitur Terakhir](features/FR-last.md) | [Ikhtisar Sistem (Overview)](00-overview.md)
+  ```
+

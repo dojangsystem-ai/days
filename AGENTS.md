@@ -90,8 +90,10 @@ estimated_effort: "4-6 weeks"
   3. **API Endpoint Spec:** Wajib mendefinisikan HTTP Method, Endpoint URI, Request Headers, JSON Request Payload, dan JSON Response Payload (termasuk status code 2xx, 4xx, 5xx).
   4. **Edge Cases & Failure Modes:** Menyebutkan secara eksplisit skenario kegagalan, batas rate-limit, dan validasi input.
   5. **Security & Data Privacy Review:** Pengecekan autentikasi, otorisasi (RBAC), enkripsi data at-rest & in-transit.
+  6. **Navigasi Sekuensial Antar-Modul/Dokumen:** Di baris paling bawah setiap berkas, sediakan tautan footer navigasi relatif (`[← Sebelumnya](link) | [Overview](link) | [Selanjutnya →](link)`) untuk memudahkan pembaca menelusuri alur PRD.
 
 ---
+
 
 ## 4. Visuals & Diagram Standards
 
