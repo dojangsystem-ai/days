@@ -38,34 +38,64 @@ Kondisi fragmentasi ini menciptakan titik kegagalan (*pain points*) operasional 
 
 Untuk mencegah jebakan arsitektur *spaghetti monolitik*, B2B Modular ERP didekomposisi ke dalam 4 tingkatan lapisan (*modular layers*):
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       LAYER 3: FINANCIAL & SUB-LEDGER                       │
-│  [Accounts Payable (AP)] ── [Accounts Receivable (AR)] ── [General Ledger]  │
-└──────────────────────────────────────▲──────────────────────────────────────┘
-                                       │ (Async Domain Events: Invoiced, Paid)
-┌──────────────────────────────────────┴──────────────────────────────────────┐
-│                    LAYER 2: BUSINESS OPERATIONS (CORE O&S)                  │
-│   ┌─────────────────────────────┐     ┌─────────────────────────────────┐   │
-│   │   Procure-to-Pay (P2P)      │     │      Order-to-Cash (O2C)        │   │
-│   │  PO -> Goods Receipt -> Bill│     │  SO -> Delivery Order -> Invoice│   │
-│   └──────────────┬──────────────┘     └────────────────┬────────────────┘   │
-│                  │                                     │                    │
-│                  └───────────────┐     ┌───────────────┘                    │
-│                                  ▼     ▼                                    │
-│                       [Inventory & Warehouse Control]                       │
-│                       Stock Moves | Multi-Location | Quants                 │
-└──────────────────────────────────────▲──────────────────────────────────────┘
-                                       │ (References SKU, UoM, Partner)
-┌──────────────────────────────────────┴──────────────────────────────────────┐
-│                    LAYER 1: MASTER DATA MANAGEMENT (MDM)                    │
-│    [Product / SKU & Variants] ── [Multi-UoM] ── [Business Partner (B2B)]    │
-└──────────────────────────────────────▲──────────────────────────────────────┘
-                                       │ (Tenancy, RBAC, Seq Engine)
-┌──────────────────────────────────────┴──────────────────────────────────────┐
-│                   LAYER 0: CORE PLATFORM FOUNDATION                         │
-│  [Multi-Tenant Context] ── [RBAC & Permissions] ── [Sequence Engine & Audit] │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    %% Styling Classes & Themes
+    classDef foundation fill:#F8FAFC,stroke:#64748B,stroke-width:1.5px,color:#0F172A
+    classDef mdm fill:#F0FDF4,stroke:#16A34A,stroke-width:1.5px,color:#14532D
+    classDef ops fill:#EFF6FF,stroke:#2563EB,stroke-width:1.5px,color:#1E3A8A
+    classDef finance fill:#FAF5FF,stroke:#9333EA,stroke-width:1.5px,color:#581C87
+    classDef nodeBox fill:#FFFFFF,stroke:#CBD5E1,stroke-width:1.5px,color:#1E293B
+    classDef highlightBox fill:#FFFFFF,stroke:#2563EB,stroke-width:2px,color:#0F172A
+
+    subgraph L0 ["LAYER 0: CORE PLATFORM FOUNDATION"]
+        direction LR
+        L0_Tenant["Multi-Tenant Context<br/>(Isolation & Security Filter)"]:::nodeBox
+        L0_RBAC["RBAC & Permissions<br/>(Role & Policy Evaluator)"]:::nodeBox
+        L0_Audit["Sequence Engine & Audit<br/>(Numbering & Universal Log)"]:::nodeBox
+    end
+
+    subgraph L1 ["LAYER 1: MASTER DATA MANAGEMENT (MDM)"]
+        direction LR
+        L1_Product["Product / SKU & Variants<br/>(Katalog & Barcode)"]:::nodeBox
+        L1_UoM["Multi-UoM<br/>(Konversi Multi-Satuan)"]:::nodeBox
+        L1_Partner["Business Partner (B2B)<br/>(Pelanggan & Pemasok)"]:::nodeBox
+    end
+
+    subgraph L2 ["LAYER 2: BUSINESS OPERATIONS (CORE O&S)"]
+        direction TB
+        subgraph L2_Flows ["Operational Business Workflows"]
+            direction LR
+            L2_P2P["<b>Procure-to-Pay (P2P)</b><br/>PO → Goods Receipt → Bill"]:::highlightBox
+            L2_O2C["<b>Order-to-Cash (O2C)</b><br/>SO → Delivery Order → Invoice"]:::highlightBox
+        end
+        L2_Inv["<b>Inventory & Warehouse Control</b><br/>Stock Moves | Multi-Location | Quants (Double-Entry)"]:::highlightBox
+
+        L2_P2P -->|"Goods Receipt (Stock In)"| L2_Inv
+        L2_O2C -->|"Delivery Order (Stock Out)"| L2_Inv
+    end
+
+    subgraph L3 ["LAYER 3: FINANCIAL & SUB-LEDGER"]
+        direction LR
+        L3_AP["<b>Accounts Payable (AP)</b><br/>Hutang Dagang & Aging"]:::nodeBox
+        L3_GL["<b>General Ledger (GL)</b><br/>Buku Besar & Jurnal Otomatis"]:::highlightBox
+        L3_AR["<b>Accounts Receivable (AR)</b><br/>Piutang Dagang & Limit Kredit"]:::nodeBox
+
+        L3_AP <-->|"Sub-Ledger Sync"| L3_GL
+        L3_AR <-->|"Sub-Ledger Sync"| L3_GL
+    end
+
+    %% Hierarchical Dependencies & Domain Events
+    L0 ==>|"Tenancy, RBAC, Seq Engine Context"| L1
+    L1 ==>|"References SKU, UoM, Partner Master"| L2
+    L2 ==>|"Async Domain Events: Invoiced, Paid, COGS"| L3
+
+    %% Layer Box Visual Styles
+    style L0 fill:#F8FAFC,stroke:#64748B,stroke-width:1.5px,stroke-dasharray: 4 4
+    style L1 fill:#F0FDF4,stroke:#16A34A,stroke-width:1.5px
+    style L2 fill:#EFF6FF,stroke:#2563EB,stroke-width:2px
+    style L2_Flows fill:#DBEAFE,stroke:#3B82F6,stroke-width:1px,stroke-dasharray: 2 2
+    style L3 fill:#FAF5FF,stroke:#9333EA,stroke-width:1.5px
 ```
 
 ### 2.1 Penjelasan Hirarki Lapisan
@@ -122,15 +152,29 @@ Untuk menjangkau spektrum pelaku usaha yang luas di Indonesia—mulai dari toko 
 
 ### 6.1 Rincian Skema Paket Berlangganan (Subscription Tiers)
 
-```text
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                        HIERARKI TIER BERLANGGANAN B2B MODULAR ERP                      │
-├───────────────┬──────────────────┬─────────────────┬─────────────────┬────────────────┤
-│ 1. STARTER    │ 2. BASIC (UMKM)  │ 3. STANDARD     │ 4. PREMIUM      │ 5. CUSTOM      │
-│ Rp 299 rb/bln │ Rp 699 rb/bln    │ Rp 1.499 rb/bln │ Rp 2.899 rb/bln │ Rp 7.500 rb/bln│
-│ Toko Rintisan │ Toko Grosir/UKM  │ Distributor B2B │ Dist. Regional  │ Korporat/Holding│
-│ 1 Gudang/2 User│ 2 Gudang/5 User │ 5 Gudang/15 User│ Unl. Gudang/35  │ Private Cloud  │
-└───────────────┴──────────────────┴─────────────────┴─────────────────┴────────────────┘
+```mermaid
+flowchart LR
+    %% Styling Classes & Themes
+    classDef starter fill:#F8FAFC,stroke:#64748B,stroke-width:1.5px,color:#0F172A
+    classDef basic fill:#EFF6FF,stroke:#3B82F6,stroke-width:1.5px,color:#1E3A8A
+    classDef standard fill:#ECFDF5,stroke:#10B981,stroke-width:2px,color:#064E3B
+    classDef premium fill:#FAF5FF,stroke:#8B5CF6,stroke-width:2px,color:#581C87
+    classDef custom fill:#FFFBEB,stroke:#D97706,stroke-width:2px,color:#78350F
+
+    T1["<b>1. STARTER</b><br/><b>Rp 299 rb / bln</b><br/><i>Toko Rintisan / Solopreneur</i><br/><br/>• 2 User Seats<br/>• 1 Gudang / Toko<br/>• Maks 500 SKU<br/>• Kasir POS Ritel & Nota"]:::starter
+
+    T2["<b>2. BASIC (UMKM)</b><br/><b>Rp 699 rb / bln</b><br/><i>Toko Grosir & Distributor Kecil</i><br/><br/>• 5 User Seats<br/>• 2 Gudang Fisik<br/>• B2B Sales (SO / DO)<br/>• Kontrol Limit Kredit Klien"]:::basic
+
+    T3["<b>3. STANDARD</b><br/><b>Rp 1.499 rb / bln</b><br/><i>Distributor B2B Multi-Cabang</i><br/><br/>• 15 User Seats<br/>• 5 Gudang | 3 Cabang<br/>• Mobile Barcode PWA<br/>• 3-Way Match & Jurnal Auto"]:::standard
+
+    T4["<b>4. PREMIUM</b><br/><b>Rp 2.899 rb / bln</b><br/><i>Distributor Regional Mapan</i><br/><br/>• 35 User Seats<br/>• Unl. Cabang & Gudang<br/>• Portal Klien B2B Mandiri<br/>• e-Faktur Pajak & Auto Reorder"]:::premium
+
+    T5["<b>5. CUSTOM / ENTERPRISE</b><br/><b>Mulai Rp 7.500 rb / bln</b><br/><i>Korporat, Holding & Private Cloud</i><br/><br/>• Unlimited Seats<br/>• Dedicated Private Cloud<br/>• Multi-Company Holding<br/>• Custom Module & SLA 99.95%"]:::custom
+
+    T1 ==>|"Upgrade Skala"| T2
+    T2 ==>|"Ekspansi Gudang"| T3
+    T3 ==>|"Otomasi Penuh"| T4
+    T4 ==>|"Private Cloud"| T5
 ```
 
 #### Tier 1: Starter (Usaha Rintisan / Solopreneur)
