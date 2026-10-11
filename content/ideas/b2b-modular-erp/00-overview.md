@@ -29,8 +29,8 @@ Kondisi fragmentasi ini menciptakan titik kegagalan (*pain points*) operasional 
 
 **B2B Modular ERP** dirancang sebagai solusi *progressive & modular enterprise resource planning* yang memecah kompleksitas sistem menjadi modul-modul independen (*decoupled modules*). Sistem ini mengutamakan kecepatan implementasi (*rapid time-to-value*), dimulai dari pondasi inti (*Core & Master Data*), alur operasional utama (*Inventory, Procure-to-Pay, Order-to-Cash*), hingga otomasi pembukuan finansial tanpa membebani pengguna dengan kompleksitas berlebih di awal.
 
-![B2B Modular ERP Trading & Distribution Dashboard](assets/erp-main-dashboard.jpg)
-*Gambar 1.1: Mockup Antarmuka Web Dashboard B2B Modular ERP (Trading & Distribution).*
+![Ilustrasi Ekosistem Operasional Bisnis B2B Trading & Distribusi](assets/erp-ecosystem-illust.jpg)
+*Gambar 1.1: Ilustrasi Alur Terintegrasi B2B Modular ERP — Menghubungkan Gudang, Logistik, Tim Penjualan, dan Akuntansi Finansial.*
 
 ---
 

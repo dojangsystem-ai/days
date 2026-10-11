@@ -19,8 +19,8 @@ estimated_effort: "2 weeks"
 **I want to** memantau posisi stok per gudang dan lokasi rak secara *real-time*, mengelola pergerakan barang (masuk, keluar, transfer antar-gudang, dan penyesuaian stok opname), serta melakukan reservasi stok secara otomatis saat pesanan penjualan dibuat,  
 **So that** tidak terjadi *overselling*, barang yang ada di gudang selalu akurat dengan catatan sistem, dan riwayat mutasi barang dapat ditelusuri (*fully traceable*).
 
-![Aplikasi Mobile Pemindai Barcode Gudang](../assets/warehouse-scanner-app.jpg)
-*Gambar 3.1: Antarmuka Aplikasi Mobile PWA Pemindai Barcode Gudang & Penerimaan Barang (GRN).*
+![Ilustrasi Operasional Gudang & Pemindaian Barcode](../assets/warehouse-stock-illust.jpg)
+*Gambar 3.1: Ilustrasi Aktivitas Gudang — Staf Memindai Barcode Barang Masuk (GRN) dan Penataan Stok Pallet ke Rak Penyimpanan.*
 
 ---
 

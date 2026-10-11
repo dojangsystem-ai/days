@@ -19,8 +19,8 @@ estimated_effort: "2 weeks"
 **I want to** membuat pesanan penjualan (*Sales Order* / SO) dengan pengecekan batas kredit dan reservasi stok otomatis, menerbitkan Surat Jalan (*Delivery Order* / DO) saat barang dikirim dari gudang, serta mencetak Faktur Penjualan (*Customer Invoice*) dengan pelacakan piutang dagang (*Accounts Receivable*),  
 **So that** proses pengiriman barang ke pelanggan terkontrol ketat, risiko piutang macet dicegah sejak awal, dan penagihan tercatat rapi sesuai syarat termin pembayaran.
 
-![Antarmuka Penjualan & Kasir POS Grosir](../assets/b2b-pos-checkout.jpg)
-*Gambar 5.1: Antarmuka Kasir Penjualan B2B / POS Retail dengan Validasi Status Kredit Pelanggan & Multi-Metode Pembayaran.*
+![Ilustrasi Kasir Grosir & Penjualan Order-to-Cash](../assets/sales-o2c-illust.jpg)
+*Gambar 5.1: Ilustrasi Transaksi Penjualan & Kasir Grosir (O2C) — Staf Kasir Memindai Dus Barang dan Pelanggan Melakukan Pembayaran QRIS.*
 
 ---
 

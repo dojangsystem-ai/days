@@ -29,20 +29,20 @@ Direktori ini memuat seluruh berkas spesifikasi teknis fitur (*Functional Requir
 
 ---
 
-## 2. Ilustrasi Visual Antarmuka Modul
+## 2. Ilustrasi Visual Alur Proses Modul
 
-Setiap modul dilengkapi dengan desain antarmuka operasional yang siap dikembangkan:
+Setiap modul dilengkapi ilustrasi visual proses kerja dan interaksi orang di lapangan:
 
 - **Modul Gudang & Inventaris (FR-03):**  
-  ![Aplikasi Mobile Pemindai Barcode Gudang](../assets/warehouse-scanner-app.jpg)  
+  ![Ilustrasi Operasional Gudang](../assets/warehouse-stock-illust.jpg)  
   *Lihat spesifikasi lengkap di [FR-03: Inventory & Multi-Warehouse Stock Control](FR-03-inventory-and-warehouse.md).*
 
 - **Modul Pengadaan & Pembelian (FR-04):**  
-  ![Verifikasi Procure-to-Pay & 3-Way Matching](../assets/procure-to-pay-ui.jpg)  
+  ![Ilustrasi Pengadaan P2P](../assets/procure-p2p-illust.jpg)  
   *Lihat spesifikasi lengkap di [FR-04: Procure-to-Pay / P2P](FR-04-procure-to-pay.md).*
 
 - **Modul Penjualan & Kasir POS (FR-05):**  
-  ![Antarmuka Penjualan & Kasir POS Grosir](../assets/b2b-pos-checkout.jpg)  
+  ![Ilustrasi Kasir Grosir O2C](../assets/sales-o2c-illust.jpg)  
   *Lihat spesifikasi lengkap di [FR-05: Order-to-Cash / O2C](FR-05-order-to-cash.md).*
 
 ---

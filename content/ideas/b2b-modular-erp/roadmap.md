@@ -59,8 +59,8 @@ Fokus peluncuran MVP adalah memberikan kemampuan operasional *end-to-end* bagi d
 ## 2.2 Phase 1: Financial Automation & Warehouse Mobility (Month 3 to 5)
 Menghubungkan seluruh transaksi fisik dan operasional ke buku besar keuangan secara otomatis serta mempermudah operasional staf lapangan.
 
-![Financial Accounting & General Ledger](assets/accounting-ledger-ui.jpg)
-*Gambar R.1: Antarmuka Buku Besar Umum & Analisis Umur Piutang (AR Aging Chart).*
+![Ilustrasi Akuntansi Keuangan & Pertumbuhan Profit](assets/accounting-finance-illust.jpg)
+*Gambar R.1: Ilustrasi Pengelolaan Keuangan & Akuntansi — Staf Finansial Memantau Neraca Seimbang (Debit/Kredit) dan Tren Pertumbuhan Profit Perusahaan.*
 
 - **Scope Deliverables:**
   - **Subledger AP/AR & Aging Schedule:** Laporan umur piutang (*30/60/90 days aging schedule*) otomatis dan rekonsiliasi pembayaran bertahap (*partial payment matching*).

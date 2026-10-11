@@ -19,8 +19,8 @@ estimated_effort: "2 weeks"
 **I want to** membuat pesanan pembelian (*Purchase Order* / PO), memvalidasi penerimaan fisik barang dari pemasok (*Goods Receipt Note* / GRN) yang otomatis menambah stok gudang, serta mencatat tagihan pemasok (*Vendor Bill*) dengan verifikasi pencocokan 3 arah (*3-way matching*),  
 **So that** pengadaan barang berjalan tertib, stok masuk tercatat tepat waktu dan kuantitas, serta pembayaran kepada vendor hanya dilakukan atas barang yang benar-benar diterima sesuai kesepakatan harga.
 
-![Verifikasi Procure-to-Pay & 3-Way Matching](../assets/procure-to-pay-ui.jpg)
-*Gambar 4.1: Antarmuka Verifikasi PO & Audit Status 3-Way Matching (PO vs GRN vs Vendor Bill).*
+![Ilustrasi Kemitraan Pengadaan & Penerimaan Barang Pemasok](../assets/procure-p2p-illust.jpg)
+*Gambar 4.1: Ilustrasi Pengadaan (P2P) — Staf Pembelian dan Supplier Menyepakati Penerimaan Barang Sesuai Checklist PO.*
 
 ---
 
