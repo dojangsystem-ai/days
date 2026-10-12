@@ -146,4 +146,4 @@ Feature: Smart Role Authentication and Redirection
 
 ## Navigasi Modul & Fitur
 
-[← Fitur Sebelumnya](../01-architecture-and-techstack.md) | [Ikhtisar Sistem](../00-overview.md) | [Fitur Selanjutnya →](FR-02-dojang-operational-management.md)
+[← Dokumen Sebelumnya](../02-value-system-and-monetization.md) | [Ikhtisar Sistem](../00-overview.md) | [Fitur Selanjutnya →](FR-02-dojang-operational-management.md)

@@ -1,13 +1,13 @@
-# 🥋 DOOJANG.ID Coach — Official Marketing Kit & Product Deck
+# 🥋 DAYS (Dojang Application System) Coach — Official Marketing Kit & Product Deck
 
 > **Aplikasi Mobile Pelatih (Sabeum) untuk Melatih, Menilai, dan Membina Atlet**  
 > Scan absensi, jadwal mengajar, scoring Kyorugi / Poomsae / Kyukpa, monitoring kesiapan atlet, evaluasi murid, hingga poin dan kurikulum — semuanya dari ponsel pelatih.
 
 ---
 
-## 🎯 Mengapa DOOJANG.ID Coach? (Problem vs. Solution)
+## 🎯 Mengapa DAYS Coach? (Problem vs. Solution)
 
-| ❌ Kendala Pelatih | ✅ Solusi dengan DOOJANG.ID Coach |
+| ❌ Kendala Pelatih | ✅ Solusi dengan DAYS Coach |
 | :--- | :--- |
 | **Absensi Manual Menyita Waktu Latihan**: Memanggil nama satu per satu. | **Scanner Absensi QR**: Scan QR murid dalam hitungan detik, rekap otomatis. |
 | **Tidak Tahu Kondisi Atlet Sebelum Sparring**: Atlet cedera atau kelelahan tetap dipaksa latihan. | **Squad Readiness Board**: Lampu lalu lintas kesiapan seluruh atlet sebelum sesi dimulai. |

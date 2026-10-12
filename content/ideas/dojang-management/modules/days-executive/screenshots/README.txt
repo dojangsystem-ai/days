@@ -1,5 +1,5 @@
 ================================================================================
-PANDUAN SCREENSHOT SHOWCASE UNTUK DOOJANG.ID EXECUTIVE PLATFORM
+PANDUAN SCREENSHOT SHOWCASE UNTUK DAYS (Dojang Application System) EXECUTIVE PLATFORM
 (Fokus: Modul Federasi, Modul Event UKT, dan Modul Turnamen/Kompetisi)
 ================================================================================
 

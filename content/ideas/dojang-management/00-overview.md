@@ -13,7 +13,8 @@ estimated_effort: "8-12 weeks"
 
 # 🥋 DAYS — Enterprise Martial Arts Management Ecosystem
 
-> **Official Portal & Website:** [https://dojang.warsootech.com](https://dojang.warsootech.com)
+> **Official Portal & Website:** [https://dojang.warsootech.com](https://dojang.warsootech.com)  
+> 📍 **Navigasi Cepat:** [🏠 Overview](00-overview.md) • [🏗️ 01-Arsitektur](01-architecture-and-techstack.md) • [💎 02-Nilai & Monetisasi](02-value-system-and-monetization.md) • [🗺️ 03-Roadmap](03-roadmap.md) • [⚡ Fitur (FR-01 s/d 06)](features/FR-01-user-authentication.md) • [📸 Showcase UI](modules/days-admin/SHOWCASE.md)
 
 ## 1. Problem Statement
 
@@ -72,6 +73,9 @@ flowchart TD
     EXE -->|Hasil Prestasi| MBR
 ```
 
+![Ilustrasi Ekosistem Operasional Terpadu DAYS](assets/dojang-ecosystem-illust.jpg)
+*Gambar 1.1: Ilustrasi Ekosistem Terpadu DAYS — Menghubungkan Manajemen Dojang, Presensi QR Pelatih, Pembayaran Iuran Digital Wali Murid, dan Papan Nilai Kejuaraan.*
+
 ### Nilai Pembeda Kunci (Unfair Advantages):
 1. **Single Source of Truth Atlet:** Profil atlet, rekam jejak berat/tinggi badan, riwayat sabuk, dan lisensi PBTI terpusat. Ketika mendaftar UKT atau kejuaraan, data di-*lookup* secara instan tanpa re-entry.
 2. **Integrated Sports Science:** Memadukan metodologi *Athlete Readiness 5P* (Tidur, Energi, Nyeri Otot, Stres, Kesiapan Mental) dan kalkulasi *Session-RPE* ke level dojang grassroots.
@@ -81,7 +85,22 @@ flowchart TD
 
 ---
 
-## 3. Target User Personas
+## 3. Matriks Transformasi Operasional (Before vs. After DAYS)
+
+Untuk membuktikan signifikansi kegunaan sistem bagi para pengambil keputusan (Dojang Owner, Pelatih, Wali Murid, EO, dan Pengcab), berikut perbandingan terukur sebelum dan sesudah implementasi DAYS:
+
+| Aspek Operasional | Metode Tradisional / Manual | Solusi Terpadu DAYS | Dampak Terukur (Impact) |
+| :--- | :--- | :--- | :--- |
+| **Presensi & Sesi Latihan** | Catatan buku fisik / kertas robek; pelatih membuang 15 menit per sesi untuk memanggil nama. | Scan QR otomatis via ponsel pelatih (<1 detik per murid) dengan audio-visual feedback. | **Menghemat 12–15 jam/bulan** waktu pelatih untuk fokus melatih teknik & sparring. |
+| **Penagihan Iuran Bulanan** | Tagihan manual via WhatsApp personal; bukti transfer dicek manual di mutasi m-banking; banyak lupa bayar. | Invoice digital terbit otomatis tanggal 1, pengingat WhatsApp terintegrasi, pembayaran instan QRIS/VA, kwitansi digital ber-QR. | **Pemulihan tunggakan 40–60%** dalam 30 hari; arus kas dojang sehat tanpa rasa canggung menagih. |
+| **Pemantauan Kondisi Atlet** | Pelatih tidak tahu anak begadang/kelelahan; risiko cedera tinggi saat sparring kontak keras. | Log harian mandiri *Athlete Readiness 5P* di ponsel atlet; Coach dashboard menampilkan status *Traffic Light* (Hijau/Kuning/Merah). | **Menekan risiko cedera hingga 45%** dan mempersonalisasi beban latihan (*Session-RPE*). |
+| **Drawing Bagan Kejuaraan** | Drawing manual di kertas/Excel hingga larut malam; rawan protes atlet satu klub saling gugur di babak awal. | Algoritma *Smart Bracket Generator* (<5 detik untuk 1.000 atlet) dengan proteksi anti-bentrok rekan satu dojang (*club separation*). | **Nol protes kontingen**; Technical Meeting selesai 3 jam lebih cepat. |
+| **Operasional Gelanggang GOR** | Wasit mencatat di kertas; panitia bolak-balik panggil atlet via pengeras suara; GOR molor 3–4 jam (denda overtime sewa). | Live digital scoring sync via WebSockets ke TV Display arena; monitor antrean atlet di call room ponsel. | **Nol denda overtime sewa GOR** (hemat Rp 3–6 juta per event); jadwal selesai tepat waktu. |
+| **Penerbitan Sertifikat (UKT/Event)** | Ketik manual satu per satu berminggu-minggu; sertifikat kertas rawan dipalsukan. | Batch generate ratusan E-Sertifikat PDF ber-QR verifikasi publik resmi dalam 1 klik. | Selesai tepat saat upacara penutupan kejuaraan. |
+
+---
+
+## 4. Target User Personas
 
 | Persona | Peran Utama | Kebutuhan & Masalah Utama | Modul Penggunaan |
 | :--- | :--- | :--- | :--- |
@@ -94,7 +113,7 @@ flowchart TD
 
 ---
 
-## 4. Core Success Metrics & Business KPIs
+## 5. Core Success Metrics & Business KPIs
 
 ### A. Key Performance Indicators (Teknis & Operasional)
 - **Drawing Latency:** Algoritma auto-drawing menyelesaikan bagan 1.000 peserta dalam `< 5 detik`.
@@ -111,6 +130,26 @@ flowchart TD
 
 ---
 
+## 6. Peta Dokumen & Indeks Arsitektur Sistem
+
+Seluruh spesifikasi sistem DAYS dirancang secara modular dan dapat ditelusuri melalui matriks dokumen di bawah ini:
+
+| No | Modul / Dokumen | Tipe Spesifikasi | Deskripsi Ringkas |
+| :---: | :--- | :--- | :--- |
+| **00** | [Ikhtisar Sistem (Overview)](00-overview.md) | Dokumen Induk | Problem statement, value proposition, transformasi operasional, dan KPI. |
+| **01** | [Arsitektur & Tech Stack](01-architecture-and-techstack.md) | Arsitektur Teknis | Topologi sistem, ERD database PostgreSQL, keamanan RBAC, & latensi arena. |
+| **02** | [Sistem Nilai & Monetisasi](02-value-system-and-monetization.md) | Analisis Bisnis | Unit economics dojang Indonesia, mitigasi denda GOR, COGS, dan pricing SaaS. |
+| **FR-01** | [Autentikasi & Smart RBAC](features/FR-01-user-authentication.md) | Spesifikasi Fitur | Single sign-on gerbang tunggal dengan multi-role routing otomatis. |
+| **FR-02** | [Manajemen Operasional Dojang](features/FR-02-dojang-operational-management.md) | Spesifikasi Fitur | Registrasi atlet, kartu sabuk, penagihan iuran QRIS, dan profil website. |
+| **FR-03** | [Coach Scanner & Digital Scoring](features/FR-03-coach-scanner-and-scoring.md) | Spesifikasi Fitur | Scan presensi kamera PWA, scoring latihan, dan evaluasi kurikulum. |
+| **FR-04** | [Sports Science & Member Hub](features/FR-04-athlete-readiness-and-member-hub.md) | Spesifikasi Fitur | Readiness 5P, Session-RPE, kartu QR murid, dan riwayat medali. |
+| **FR-05** | [Tournament Engine & Live Arena](features/FR-05-tournament-bracket-and-live-scoring.md) | Spesifikasi Fitur | Algoritma drawing sistem gugur, timbang badan, dan scoreboard TV. |
+| **FR-06** | [Tata Kelola Federasi & E-Sertifikat](features/FR-06-federation-governance-and-e-cert.md) | Spesifikasi Fitur | Peta GIS Pengcab, kliring mutasi atlet resmi, dan sertifikat ber-QR. |
+| **UI** | [Showcase Visual DAYS Admin](modules/days-admin/SHOWCASE.md) | Bukti Antarmuka | Galeri screenshot dan interaksi modul manajemen klub operasional. |
+| **03** | [Roadmap Pengembangan Produk](03-roadmap.md) | Rencana Rilis | MVP Milestone, Phase 1 (Turnamen/Sports Science), & Phase 2 (Skala). |
+
+---
+
 ## Navigasi Dokumen
 
-[Ikhtisar Sistem (Overview)](00-overview.md) | [Sistem Nilai & Monetisasi →](02-value-system-and-monetization.md) | [Arsitektur & Tech Stack →](01-architecture-and-techstack.md)
+[Ikhtisar Sistem (Overview)](00-overview.md) | [01-Arsitektur & Tech Stack →](01-architecture-and-techstack.md) | [02-Sistem Nilai & Monetisasi →](02-value-system-and-monetization.md) | [03-Roadmap Produk →](03-roadmap.md)

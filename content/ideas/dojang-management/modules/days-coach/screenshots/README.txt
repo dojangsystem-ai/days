@@ -1,5 +1,5 @@
 ================================================================================
-PANDUAN SCREENSHOT SHOWCASE.md — DOOJANG.ID COACH (Mobile)
+PANDUAN SCREENSHOT SHOWCASE.md — DAYS (Dojang Application System) COACH (Mobile)
 ================================================================================
 
 Simpan file .png di folder ini:

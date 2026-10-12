@@ -13,7 +13,8 @@ estimated_effort: "8-12 weeks"
 
 # 🏗️ Arsitektur Sistem & Tech Stack — DAYS
 
-> **Official Portal & Website:** [https://dojang.warsootech.com](https://dojang.warsootech.com)
+> **Official Portal & Website:** [https://dojang.warsootech.com](https://dojang.warsootech.com)  
+> 📍 **Navigasi Cepat:** [🏠 Overview](00-overview.md) • [🏗️ 01-Arsitektur](01-architecture-and-techstack.md) • [💎 02-Nilai & Monetisasi](02-value-system-and-monetization.md) • [🗺️ 03-Roadmap](03-roadmap.md) • [⚡ Fitur (FR-01 s/d 06)](features/FR-01-user-authentication.md) • [📸 Showcase UI](modules/days-admin/SHOWCASE.md)
 
 ## 1. Arsitektur Topologi Sistem (System Topology)
 
@@ -64,6 +65,9 @@ flowchart TD
     EVENT_SVC & TOURNAMENT_SVC --> S3_STORAGE
     DOJANG_SVC & TOURNAMENT_SVC --> NOTIF_SVC
 ```
+
+![Ilustrasi Arena Kejuaraan & Digital Scoring DAYS](assets/tournament-engine-illust.jpg)
+*Gambar 2.1: Ilustrasi Digital Arena Kejuaraan — Mengintegrasikan Terminal Scoring Meja Wasit, Live LED Scoreboard TV Arena, dan Smart Bracket Engine.*
 
 ---
 
@@ -284,6 +288,16 @@ erDiagram
 
 ---
 
+## 5. Ketahanan Jaringan Lapangan (Field Network Resilience & Arena Offline-Mode)
+
+Tantangan terbesar kompetisi beladiri di Indonesia adalah **kualitas sinyal seluler yang buruk di dalam Gedung Olahraga (GOR) tertutup**. DAYS mengatasi masalah ini dengan pendekatan arsitektur khusus:
+
+1. **Local Edge WebSocket Broker:** Pada turnamen besar, unit komando lokal (Raspberry Pi / Mini PC on-premise) dapat berperan sebagai edge gateway lokal sehingga scoring meja wasit dan scoreboard TV tetap tersinkronisasi dalam hitungan milidetik (*sub-50ms*) tanpa bergantung pada koneksi internet publik.
+2. **Offline-First PWA Caching:** PWA Coach dan Wasit menyimpan antrean penilaian (*scoring logs*) di IndexedDB terenkripsi. Ketika koneksi terputus, pertandingan tetap berjalan, dan data otomatis disinkronisasi ke PostgreSQL cloud saat koneksi pulih (*auto-reconnection reconciliation*).
+3. **Dual-Display TV Engine:** Scoreboard TV beroperasi pada mode fullscreen HTML5 Canvas berbasis hardware acceleration, tahan terhadap lag refresh rate browser dan kompatibel dengan kabel HDMI maupun Miracast nirkabel.
+
+---
+
 ## Navigasi Dokumen
 
-[← Sistem Nilai & Monetisasi](02-value-system-and-monetization.md) | [Ikhtisar Sistem](00-overview.md) | [Spesifikasi Fitur Pertama (FR-01) →](features/FR-01-user-authentication.md)
+[← 00-Ikhtisar Sistem](00-overview.md) | [02-Sistem Nilai & Monetisasi →](02-value-system-and-monetization.md) | [03-Roadmap Produk →](03-roadmap.md)

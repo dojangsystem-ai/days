@@ -1,13 +1,13 @@
-# 🥋 DOOJANG.ID Admin Dojang — Official Marketing Kit & Product Deck
+# 🥋 DAYS (Dojang Application System) Admin Dojang — Official Marketing Kit & Product Deck
 
 > **Sistem Manajemen Dojang All-in-One untuk Pelatih, Pengurus, dan Pemilik Dojang Taekwondo**  
 > Satu dasbor untuk mengelola anggota, presensi, iuran, jadwal latihan, event & UKT, hingga website dojang — tanpa buku absen, tanpa spreadsheet, tanpa rekap manual.
 
 ---
 
-## 🎯 Mengapa DOOJANG.ID Admin? (Problem vs. Solution)
+## 🎯 Mengapa DAYS Admin? (Problem vs. Solution)
 
-| ❌ Kendala Dojang Tradisional | ✅ Solusi dengan DOOJANG.ID Admin |
+| ❌ Kendala Dojang Tradisional | ✅ Solusi dengan DAYS Admin |
 | :--- | :--- |
 | **Absensi di Buku Tulis**: Rekap kehadiran murid hilang, tidak akurat, dan sulit dianalisis. | **Presensi Digital Siswa & Pelatih**: Check-in cepat per kelas/jadwal, riwayat kehadiran tersimpan rapi dan terhubung ke laporan. |
 | **Iuran Bulanan Tidak Terlacak**: Siapa yang sudah/belum bayar harus dicek manual lewat chat WhatsApp. | **Konfirmasi & Input Iuran Terpusat**: Status bayar per murid, bukti transfer, dan rekap tunggakan dalam satu layar. |
@@ -29,13 +29,13 @@
 
 ---
 
-## 🏛️ Posisi dalam Ekosistem DOOJANG.ID
+## 🏛️ Posisi dalam Ekosistem DAYS (Dojang Application System)
 
 Admin Dojang adalah **Source of Truth** — data member dan dojang di sini menjadi sumber data bagi modul Event/Kompetisi (Executive) dan pengawasan federasi (Partner).
 
 ```mermaid
 flowchart LR
-    subgraph ADMIN ["🥋 DOOJANG.ID Admin (Modul Dojang)"]
+    subgraph ADMIN ["🥋 DAYS Admin (Modul Dojang)"]
         A1["Anggota & Pelatih"]
         A2["Presensi & Iuran"]
         A3["Latihan & Jadwal"]
@@ -275,4 +275,4 @@ flowchart LR
 
 ## 🚀 Langkah Selanjutnya (Next Steps)
 
-Siap men-digitalisasi dojang Anda? Hubungi tim kami untuk **demo langsung**, **migrasi data anggota dari Excel**, dan **onboarding pelatih** — dojang Anda bisa berjalan di DOOJANG.ID dalam hitungan hari.
+Siap men-digitalisasi dojang Anda? Hubungi tim kami untuk **demo langsung**, **migrasi data anggota dari Excel**, dan **onboarding pelatih** — dojang Anda bisa berjalan di DAYS (Dojang Application System) dalam hitungan hari.

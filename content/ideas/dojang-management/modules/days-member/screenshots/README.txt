@@ -1,5 +1,5 @@
 ================================================================================
-PANDUAN SCREENSHOT SHOWCASE.md — DOOJANG.ID MEMBER (Mobile)
+PANDUAN SCREENSHOT SHOWCASE.md — DAYS (Dojang Application System) MEMBER (Mobile)
 ================================================================================
 
 Simpan file .png di folder ini:

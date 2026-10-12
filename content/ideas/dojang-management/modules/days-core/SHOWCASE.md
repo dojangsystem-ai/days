@@ -1,13 +1,13 @@
-# 🥋 DOOJANG.ID Core — Official Marketing Kit & Product Deck
+# 🥋 DAYS (Dojang Application System) Core — Official Marketing Kit & Product Deck
 
 > **Gerbang Digital Publik Ekosistem Taekwondo Indonesia**  
 > Landing page informasi terbuka tanpa login: profil, berita, event, galeri, direktori dojang, papan peringkat, verifikasi sertifikat — sekaligus **pintu masuk tunggal (single sign-in)** yang mengarahkan setiap pengguna ke aplikasi sesuai perannya.
 
 ---
 
-## 🎯 Mengapa DOOJANG.ID Core? (Problem vs. Solution)
+## 🎯 Mengapa DAYS Core? (Problem vs. Solution)
 
-| ❌ Kendala Tradisional | ✅ Solusi dengan DOOJANG.ID Core |
+| ❌ Kendala Tradisional | ✅ Solusi dengan DAYS Core |
 | :--- | :--- |
 | **Informasi Tersebar**: Berita, jadwal kejuaraan, dan profil organisasi hanya ada di media sosial dan grup chat. | **Satu Portal Publik Resmi**: Beranda, About, Blog, Event, dan Galeri yang terbuka untuk siapa saja tanpa login. |
 | **Sulit Mencari Dojang**: Calon murid tidak tahu dojang resmi terdekat. | **Direktori Dojang**: Daftar dojang terdaftar yang dapat dijelajahi publik. |
@@ -28,13 +28,13 @@
 
 ---
 
-## 🏛️ Posisi dalam Ekosistem DOOJANG.ID
+## 🏛️ Posisi dalam Ekosistem DAYS (Dojang Application System)
 
 Core adalah **lapisan terdepan**: informasi publik dan gerbang login. Seluruh fitur privat berada di aplikasi lain.
 
 ```mermaid
 flowchart TD
-    PUBLIC["🌐 <b>DOOJANG.ID Core</b><br/>Landing Page Publik & Login"]
+    PUBLIC["🌐 <b>DAYS Core</b><br/>Landing Page Publik & Login"]
 
     PUBLIC -->|Admin Dojang / Admin| ADM["🥋 Admin Dojang<br/><code>/admin/dashboard</code>"]
     PUBLIC -->|Super Partner / Partner| PAR["🛡️ Partner Portal<br/><code>/partner/dashboard</code>"]
@@ -83,7 +83,7 @@ flowchart LR
 * **Dampak Bisnis**: Kesan pertama profesional bagi calon murid, sponsor, dan mitra; mendorong pendaftaran dan kepercayaan.
 
 ![Beranda Core](screenshots/cor_01_home.png)  
-*Gambar 1: Beranda — landing page publik DOOJANG.ID.*
+*Gambar 1: Beranda — landing page publik DAYS.*
 
 ---
 
@@ -225,4 +225,4 @@ Dilengkapi **Verifikasi Email** (`/verifikasi`, `/verifikasi/:code`) untuk memas
 
 ## 🚀 Langkah Selanjutnya
 
-Kunjungi portal DOOJANG.ID, daftarkan dojang Anda, atau hubungi tim kami untuk **demo seluruh ekosistem** (Core, Admin, Member, Coach, Executive, dan Partner).
+Kunjungi portal DAYS (Dojang Application System) di [dojang.warsootech.com](https://dojang.warsootech.com), daftarkan dojang Anda, atau hubungi tim kami untuk **demo seluruh ekosistem** (Core, Admin, Member, Coach, Executive, dan Partner).

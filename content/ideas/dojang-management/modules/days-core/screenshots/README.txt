@@ -1,5 +1,5 @@
 ================================================================================
-PANDUAN SCREENSHOT SHOWCASE.md — DOOJANG.ID CORE (Public Landing & Login)
+PANDUAN SCREENSHOT SHOWCASE.md — DAYS (Dojang Application System) CORE (Public Landing & Login)
 ================================================================================
 
 Simpan file .png di folder ini:

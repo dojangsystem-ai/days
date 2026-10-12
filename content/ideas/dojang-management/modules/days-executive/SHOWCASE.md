@@ -1,4 +1,4 @@
-# 🥋 DOOJANG.ID EXECUTIVE PLATFORM — Official Marketing Kit & Product Deck
+# 🥋 DAYS (Dojang Application System) EXECUTIVE PLATFORM — Official Marketing Kit & Product Deck
 
 > **The Enterprise Operating System for Martial Arts Federations, Belt Grading Events, & Championship Tournaments**  
 > Satu ekosistem komando digital terintegrasi yang memberdayakan Pengurus Federasi Olahraga Beladiri (PBTI/Pengprov/Pengcab), Komite Ujian Kenaikan Tingkat (UKT), dan Event Organizer Turnamen dalam mengotomatisasi tata kelola, penjadwalan, live digital scoring, hingga pencetakan sertifikat dan buku hasil kejuaraan secara instan.
@@ -7,7 +7,7 @@
 
 ## 🧭 Navigasi Cepat Showcase per Modul
 
-Platform **DOOJANG.ID Executive** dibangun dengan arsitektur modular mandiri (*dual-mode capable*) yang terbagi menjadi 3 pilar operasional utama:
+Platform **DAYS (Dojang Application System) Executive** dibangun dengan arsitektur modular mandiri (*dual-mode capable*) yang terbagi menjadi 3 pilar operasional utama:
 
 1. [🏛️ **Modul 1: Federasi & Tata Kelola Organisasi**](#-modul-1-federasi--tata-kelola-organisasi-federation-governance) — Audit dojang, mutasi atlet, peta sebaran teritorial, MAU tracking, dan indeks kesehatan dojang binaan.
 2. [🏆 **Modul 2: Event & Ujian Kenaikan Tingkat (UKT)**](#-modul-2-event--ujian-kenaikan-tingkat-ukt--diklat) — Rubrik penilaian dinamis, grouping pos ujian, absensi QR code, tablet scoring penguji, hingga otomasi e-sertifikat ber-QR.
@@ -23,7 +23,7 @@ Pengguna dapat memilih ruang kerja sesuai perannya melalui **Workspace Selector*
 
 ```mermaid
 flowchart TD
-    WS["🎛️ <b>DOOJANG.ID EXECUTIVE COMMAND CENTER</b><br/><code>/executive/select-module</code>"]
+    WS["🎛️ <b>DAYS EXECUTIVE COMMAND CENTER</b><br/><code>/executive/select-module</code>"]
     
     WS -->|Audit & Regulasi Wilayah| MOD_FED["🏛️ <b>MODUL FEDERASI</b><br/><code>/executive/federasi/*</code><br/><i>Surveillance Dojang, Mutasi, MAU, & Indeks Kesehatan</i>"]
     WS -->|Standarisasi & Sertifikasi| MOD_EVT["🏆 <b>MODUL EVENT (UKT & DIKLAT)</b><br/><code>/executive/events/*</code><br/><i>Rubrik Penilaian, Grouping Pos, QR Check-in, & E-Sertifikat</i>"]
@@ -55,7 +55,7 @@ flowchart TD
 
 ## 🎯 Problem vs. Solution: Modul Federasi
 
-| ❌ Masalah Konvensional Federasi | ✅ Solusi Modul Federasi DOOJANG.ID |
+| ❌ Masalah Konvensional Federasi | ✅ Solusi Modul Federasi DAYS |
 | :--- | :--- |
 | **Data Dojang & Atlet Fiktif**: Tidak ada cara mudah memverifikasi keaktifan murid di unit-unit latihan bawah naungan. | **Sensus Terpadu & Geospasial**: Peta sebaran digital per kecamatan/wilayah, lengkap dengan statistik demografi usia, gender, dan tingkat sabuk. |
 | **Sengketa Mutasi Atlet Antar-Klub**: Kepindahan atlet sering menimbulkan friksi antar-pelatih karena berkas kepindahan manual rawan dimanipulasi. | **Digital Transfer Clearance Workflow**: Sistem permohonan mutasi online dengan verifikasi surat rekomendasi/bebas kewajiban dojang asal berjenjang. |
@@ -141,7 +141,7 @@ flowchart LR
 
 ## 🎯 Problem vs. Solution: Modul Event (UKT)
 
-| ❌ Kendala Ujian Konvensional | ✅ Solusi Modul Event DOOJANG.ID |
+| ❌ Kendala Ujian Konvensional | ✅ Solusi Modul Event DAYS |
 | :--- | :--- |
 | **Kertas Penilaian Menumpuk & Berantakan**: Penguji menulis di kertas formulir yang rawan hilang, terkena air, atau tulisan tangan tak terbaca. | **Terminal Penilaian Penguji Digital**: Penguji menilai via tablet/smartphone per pos ujian dengan kalkulasi nilai akhir otomatis. |
 | **Pembagian Pos/Gelanggang Tidak Seimbang**: Antrean peserta di pos poomsae menumpuk ratusan orang sementara pos fisik kosong. | **Algoritma Pooling & Grouping Otomatis**: Peserta dibagi rata ke pos ujian dan sesi waktu sesuai kapasitas gelanggang. |
@@ -245,7 +245,7 @@ $$\mathbf{REGISTERED} \longrightarrow \mathbf{PAID} \longrightarrow \mathbf{VERI
 
 ## 🎯 Problem vs. Solution: Modul Turnamen
 
-| ❌ Kendala Turnamen Tradisional | ✅ Solusi Modul Turnamen DOOJANG.ID |
+| ❌ Kendala Turnamen Tradisional | ✅ Solusi Modul Turnamen DAYS |
 | :--- | :--- |
 | **Drawing Bagan Rawan Titipan/Protes**: Pengundian manual di technical meeting sering dicurigai rekayasa dan memakan waktu semalaman. | **Algoritma Auto-Drawing Netral**: Sistem mengundi bagan secara acak murni atau seeded-bracket dengan pemisahan atlet satu dojang di pool berbeda. |
 | **Jadwal Bentrok & Lapangan Menganggur**: Partai tertunda karena atlet belum siap atau satu atlet bermain di dua arena bersamaan. | **Load Balancer Jadwal & Call Room**: Sistem penjadwalan cerdas mendeteksi jeda istirahat atlet dan memanggil peserta 3 partai sebelum tanding. |
@@ -359,13 +359,13 @@ $$\mathbf{SCHEDULED} \longrightarrow \mathbf{CALLED\ (Call\ Room)} \longrightarr
 
 # 🌐 Keunggulan Arsitektur: Dual-Mode Hybrid Registration
 
-Salah satu keunggulan terbesar **DOOJANG.ID Executive** dibandingkan perangkat lunak lain adalah arsitektur **Dual-Mode Hybrid Intake**. Sistem ini dapat beroperasi dalam dua mode sekaligus secara harmonis:
+Salah satu keunggulan terbesar **DAYS Executive** dibandingkan perangkat lunak lain adalah arsitektur **Dual-Mode Hybrid Intake**. Sistem ini dapat beroperasi dalam dua mode sekaligus secara harmonis:
 
 ```mermaid
 flowchart TB
     subgraph INTAKE["Dua Pintu Masuk Pendaftaran"]
         direction LR
-        P1["🏢 <b>Jalur 1: Dojang Internal</b><br/>(Pengguna Ekosistem Dojang.id)"]
+        P1["🏢 <b>Jalur 1: Dojang Internal</b><br/>(Pengguna Ekosistem DAYS)"]
         P2["🌐 <b>Jalur 2: Kontingen Eksternal</b><br/>(Klub Tamu, Luar Daerah, EO Open)"]
     end
 

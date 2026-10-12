@@ -1,13 +1,13 @@
-# 🥋 DOOJANG.ID Member — Official Marketing Kit & Product Deck
+# 🥋 DAYS (Dojang Application System) Member — Official Marketing Kit & Product Deck
 
 > **Aplikasi Mobile Pribadi untuk Atlet & Murid Taekwondo**  
 > Check-in QR, jadwal latihan, iuran digital, materi belajar, kesiapan atlet, hingga pendaftaran kejuaraan — semua di satu aplikasi di genggaman murid dan orang tua.
 
 ---
 
-## 🎯 Mengapa DOOJANG.ID Member? (Problem vs. Solution)
+## 🎯 Mengapa DAYS Member? (Problem vs. Solution)
 
-| ❌ Kendala Murid & Orang Tua | ✅ Solusi dengan DOOJANG.ID Member |
+| ❌ Kendala Murid & Orang Tua | ✅ Solusi dengan DAYS Member |
 | :--- | :--- |
 | **Lupa Jadwal Latihan**: Info jadwal tersebar di grup chat dan sering berubah. | **Jadwal Terdekat Terpusat**: Jadwal latihan per kelas/lokasi tampil di beranda. |
 | **Absensi Manual & Antre**: Murid menunggu dipanggil di buku absen. | **Check-in QR Cepat**: Tombol Check-in di tengah navigasi, plus **Izin Tidak Hadir** langsung dari aplikasi. |
