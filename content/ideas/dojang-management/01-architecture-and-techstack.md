@@ -81,10 +81,12 @@ erDiagram
     
     dojangs ||--o{ dojang_branches : operates
     dojangs ||--o{ member_profiles : registers
+    dojangs ||--o{ coach_profiles : contracts
     dojangs ||--o{ classes : organizes
     dojangs ||--o{ monthly_dues : invoices
     
     classes ||--o{ schedules : schedules
+    coach_profiles ||--o{ schedules : instructs
     schedules ||--o{ attendances : records
     member_profiles ||--o{ attendances : logs
     
@@ -138,6 +140,21 @@ erDiagram
         date date_of_birth
         string gender
         string guardian_phone
+        boolean is_active
+    }
+
+    coach_profiles {
+        uuid id PK
+        uuid user_id FK
+        uuid dojang_id FK
+        string employment_type
+        string dan_rank
+        string kukkiwon_number
+        string pbti_license_level
+        string specialization
+        decimal per_session_fee
+        decimal monthly_salary
+        string app_access_level
         boolean is_active
     }
 

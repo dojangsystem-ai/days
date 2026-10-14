@@ -128,4 +128,4 @@ Feature: Federation Governance, Member Mutation and E-Certificate Automation
 
 ## Navigasi Modul & Fitur
 
-[← Fitur Sebelumnya](FR-05-tournament-bracket-and-live-scoring.md) | [Ikhtisar Sistem](../00-overview.md) | [Roadmap Produk →](../03-roadmap.md)
+[← Fitur Sebelumnya](FR-05-tournament-bracket-and-live-scoring.md) | [Ikhtisar Sistem](../00-overview.md) | [Fitur Selanjutnya →](FR-07-coach-and-freelance-management.md)

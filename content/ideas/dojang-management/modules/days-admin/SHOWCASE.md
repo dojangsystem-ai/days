@@ -102,12 +102,12 @@ flowchart LR
 | Fitur | Route | Manfaat |
 | :--- | :--- | :--- |
 | **Presensi Siswa** | `/attendance` | Check-in murid per kelas/jadwal, data kehadiran langsung masuk laporan. |
-| **Presensi Pelatih** | `/instructor-attendance` | Rekam kehadiran pelatih sebagai dasar honor & evaluasi. |
+| **Presensi Pelatih** | `/instructor-attendance` | Rekam kehadiran pelatih tetap & lepas sebagai dasar evaluasi & payroll honor per sesi. |
 | **Konfirmasi Iuran** | `/payments` | Verifikasi bukti transfer iuran dari wali/murid. |
 | **Input Iuran** | `/monthly-dues` | Catat iuran bulanan, pantau tunggakan per anggota. |
 
-* **Kelebihan Menjual**: Presensi dan iuran terhubung — dojang bisa melihat korelasi murid yang jarang hadir dengan tunggakan, sekaligus menjadi basis penghitungan **MAU** (murid aktif bulanan) untuk federasi.
-* **Dampak Bisnis**: Arus kas dojang lebih sehat, tunggakan berkurang, tidak ada lagi sengketa "saya sudah bayar".
+* **Kelebihan Menjual**: Presensi dan iuran terhubung — dojang bisa melihat korelasi murid yang jarang hadir dengan tunggakan, menghitung otomatis akumulasi honor pelatih lepas (*jumlah sesi hadir × fee per sesi*), sekaligus menjadi basis penghitungan **MAU** (murid aktif bulanan) untuk federasi.
+* **Dampak Bisnis**: Arus kas dojang lebih sehat, pengeluaran honor pelatih transparan tanpa sengketa hitungan sesi, tunggakan berkurang, tidak ada lagi sengketa "saya sudah bayar".
 
 ![Presensi Siswa](screenshots/adm_02_attendance.png)  
 *Gambar 2: Presensi Siswa — pencatatan kehadiran digital per kelas.*
@@ -117,20 +117,31 @@ flowchart LR
 
 ---
 
-## 3. 👥 Manajemen Anggota
+## 3. 👥 Manajemen Personil & Anggota
 
 > **Untuk**: Admin, Pelatih · **Route**: `/registrations`, `/members`, `/members/birthdays`, `/instructors`, `/belt-ranks`
 
 | Fitur | Route | Manfaat |
 | :--- | :--- | :--- |
-| **Pendaftaran Baru** | `/registrations` | Terima & setujui calon anggota baru secara digital. |
-| **Data Anggota/Atlet** | `/members` | Profil lengkap: sabuk, BB/TB, kontak wali, riwayat. |
+| **Pendaftaran Baru** | `/registrations` | Terima & setujui calon anggota atau pelatih baru secara digital. |
+| **Data Anggota/Atlet** | `/members` | Profil lengkap atlet: sabuk, BB/TB, kontak wali, riwayat. |
 | **Ulang Tahun** | `/members/birthdays` | Pengingat ulang tahun untuk ucapan personal ke murid. |
-| **Data Pelatih/Sabeum** | `/instructors` | Direktori pelatih, lisensi, dan status aktif. |
+| **Data Pelatih/Sabeum** | `/instructors` | Direktori terpadu pelatih tetap, pelatih lepas (freelance), spesialisasi, tarif honor per sesi, dan lisensi. |
 | **Tingkat Sabuk** | `/belt-ranks` | Master tingkatan sabuk (Geup/Dan) — Super Admin. |
 
-* **Kelebihan Menjual**: Satu profil anggota yang menjadi *single source of truth* — dipakai otomatis saat mendaftar event/UKT (BB, TB, sabuk di-*lookup*, bukan input ulang), dan diperbarui otomatis saat lulus kenaikan sabuk.
-* **Dampak Bisnis**: Hemat jam administrasi, data valid untuk pelaporan ke federasi, dan fitur ulang tahun menjadi alat retensi yang murah.
+### 🥋 Fitur Kunci: Manajemen Pelatih Tetap vs. Pelatih Lepas (`/instructors`)
+Di dalam menu `/instructors`, admin dojang dapat mengelola dua kategori pelatih secara fleksibel:
+1. **Pelatih Tetap (Official Sabeum):**
+   - Terikat jadwal rutin mingguan sebagai pengampu kelas utama.
+   - Memiliki akses penuh ke aplikasi mobile **DAYS Coach** (scan QR, readiness atlet 5P, scoring, kurikulum).
+   - Skema kompensasi gaji bulanan atau honor tetap.
+2. **Pelatih Lepas (Freelance / Guest Sabeum / Guru Tamu):**
+   - Didaftarkan dengan data spesialisasi (*Kyorugi*, *Poomsae*, *Fisik/S&C*), asal dojang, dan nomor sertifikasi Kukkiwon.
+   - **Skema Honor per Sesi (Pay-per-Session):** Admin menetapkan nominal tarif (misal: Rp 150.000 / sesi) untuk kalkulasi honor otomatis saat sesi selesai.
+   - **Kontrol Hak Akses Aplikasi:** Dapat diatur memiliki akses terbatas (*restricted* — hanya melihat jadwal sesi yang ditugaskan) atau didaftarkan sebagai *profil administratif* (tanpa akun login, kehadiran dicatat oleh admin).
+
+* **Kelebihan Menjual**: Database personil lengkap dalam satu layar — profil atlet dan profil pelatih tersinkronisasi otomatis dengan lisensi resmi PBTI.
+* **Dampak Bisnis**: Dojang mudah memanggil pelatih cadangan/spesialis saat menghadapi event kejuaraan tanpa kebingungan administrasi dan perhitungan honorarium.
 
 ![Data Anggota](screenshots/adm_04_members.png)  
 *Gambar 4: Data Anggota/Atlet — database terpusat murid dengan sabuk dan status keanggotaan.*
@@ -179,10 +190,10 @@ flowchart LR
 | :--- | :--- | :--- |
 | **Lokasi** | `/locations` | Kelola banyak tempat latihan (GOR, sekolah, aula) beserta alamat. |
 | **Kelas** | `/classes` | Definisi kelas berdasarkan usia/tingkat (Anak, Remaja, Dewasa, Poomsae, Kyorugi). |
-| **Jadwal** | `/schedules` | Penjadwalan rutin per lokasi, kelas, dan pelatih. |
+| **Jadwal & Penugasan** | `/schedules` | Penjadwalan rutin per lokasi, kelas, pelatih tetap, serta fitur penunjukan **Pelatih Pengganti (Substitute Coach)** untuk tanggal tertentu. |
 
-* **Kelebihan Menjual**: Mendukung dojang multi-lokasi — satu admin mengatur semua cabang latihan dengan jadwal yang tidak bentrok, dan jadwal langsung menjadi dasar presensi.
-* **Dampak Bisnis**: Ekspansi ke lokasi baru tanpa menambah beban administrasi.
+* **Kelebihan Menjual**: Mendukung dojang multi-lokasi — satu admin mengatur semua cabang latihan dengan jadwal yang tidak bentrok. Jika pelatih tetap berhalangan, admin dapat menunjuk pelatih lepas sebagai pengganti di tanggal spesifik tanpa mengubah jadwal master rutin.
+* **Dampak Bisnis**: Ekspansi ke lokasi baru tanpa menambah beban administrasi dan kelas tidak pernah kosong/batal mendadak.
 
 ![Manajemen Jadwal Latihan](screenshots/adm_07_schedules.png)  
 *Gambar 7: Jadwal Latihan — pengaturan kelas, lokasi, dan pelatih dalam satu tampilan.*
@@ -253,7 +264,7 @@ flowchart LR
 | :--- | :--- | :--- |
 | **Dashboard & Momen** | Dashboard, Momen Latihan | Gambaran harian dan dokumentasi latihan. |
 | **Presensi & Iuran** | Presensi Siswa/Pelatih, Konfirmasi & Input Iuran | Kedisiplinan dan arus kas terpantau. |
-| **Manajemen Anggota** | Pendaftaran, Data Anggota, Ulang Tahun, Pelatih, Sabuk | Database tunggal murid & pelatih. |
+| **Manajemen Personil** | Pendaftaran, Atlet, Pelatih Tetap & Lepas, Honor Sesi, Sabuk | Database tunggal atlet & pelatih dengan skema kompensasi transparan. |
 | **Event & Kompetisi** | Kontingen, UKT, Riwayat, Jadwal, Bagan | Pendaftaran event cepat dan arsip prestasi. |
 | **Manajemen Latihan** | Lokasi, Kelas, Jadwal | Operasional multi-lokasi tertata. |
 | **Toko & Bisnis** | Penjualan Toko | Pendapatan tambahan. |

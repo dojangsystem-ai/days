@@ -14,7 +14,7 @@ estimated_effort: "8-12 weeks"
 # 🥋 DAYS — Enterprise Martial Arts Management Ecosystem
 
 > **Official Portal & Website:** [https://dojang.warsootech.com](https://dojang.warsootech.com)  
-> 📍 **Navigasi Cepat:** [🏠 Overview](00-overview.md) • [🏗️ 01-Arsitektur](01-architecture-and-techstack.md) • [💎 02-Nilai & Monetisasi](02-value-system-and-monetization.md) • [🗺️ 03-Roadmap](03-roadmap.md) • [⚡ Fitur (FR-01 s/d 06)](features/FR-01-user-authentication.md) • [📸 Showcase UI](modules/days-admin/SHOWCASE.md)
+> 📍 **Navigasi Cepat:** [🏠 Overview](00-overview.md) • [🏗️ 01-Arsitektur](01-architecture-and-techstack.md) • [💎 02-Nilai & Monetisasi](02-value-system-and-monetization.md) • [🗺️ 03-Roadmap](03-roadmap.md) • [⚡ Fitur (FR-01 s/d 07)](features/FR-01-user-authentication.md) • [📸 Showcase UI](modules/days-admin/SHOWCASE.md)
 
 ## 1. Problem Statement
 
@@ -145,6 +145,7 @@ Seluruh spesifikasi sistem DAYS dirancang secara modular dan dapat ditelusuri me
 | **FR-04** | [Sports Science & Member Hub](features/FR-04-athlete-readiness-and-member-hub.md) | Spesifikasi Fitur | Readiness 5P, Session-RPE, kartu QR murid, dan riwayat medali. |
 | **FR-05** | [Tournament Engine & Live Arena](features/FR-05-tournament-bracket-and-live-scoring.md) | Spesifikasi Fitur | Algoritma drawing sistem gugur, timbang badan, dan scoreboard TV. |
 | **FR-06** | [Tata Kelola Federasi & E-Sertifikat](features/FR-06-federation-governance-and-e-cert.md) | Spesifikasi Fitur | Peta GIS Pengcab, kliring mutasi atlet resmi, dan sertifikat ber-QR. |
+| **FR-07** | [Manajemen Pelatih & Honor Sesi](features/FR-07-coach-and-freelance-management.md) | Spesifikasi Fitur | Pelatih tetap vs lepas, substitusi jadwal, dan honorarium pay-per-session. |
 | **UI** | [Showcase Visual DAYS Admin](modules/days-admin/SHOWCASE.md) | Bukti Antarmuka | Galeri screenshot dan interaksi modul manajemen klub operasional. |
 | **03** | [Roadmap Pengembangan Produk](03-roadmap.md) | Rencana Rilis | MVP Milestone, Phase 1 (Turnamen/Sports Science), & Phase 2 (Skala). |
 
