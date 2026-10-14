@@ -27,14 +27,14 @@ Ekosistem Taekwondo di Indonesia memiliki dinamika unik dengan hadirnya **TIBER 
 
 ```mermaid
 flowchart TD
-    subgraph Market Player Landscape
+    subgraph SG_PLAYERS ["Market Player Landscape"]
         TIBER["TIBER (PBTI / Olympico)<br>• Top-down Federation Focus<br>• Monopoli UKT & E-Sertifikat Nasional<br>• Basis Web Portal"]
         GLOBAL["SaaS Global (Kicksite / Gymdesk)<br>• Bottom-up Club ERP<br>• Mahal ($50-$150/bln)<br>• Stripe Only / Tanpa QRIS & WA"]
         STATUS_QUO["Status Quo Lokal (WA + Excel)<br>• Manual, gratis, rawan bocor kas<br>• Tidak ada integrasi sistemik"]
         DAYS["DAYS Apps (Dojang Operating System)<br>• Club-Centric & Daily-Use<br>• Kehadiran harian + SPP bulanan via WA/QRIS<br>• Feed/Sync otomatis ke TIBER untuk UKT"]
     end
 
-    TIBER -.->|Fokus: Event UKT 3-4x setahun| DO_DAYS[Dojang Taekwondo Operations]
+    TIBER -.->|Fokus: Event UKT 3-4x setahun| DO_DAYS["Dojang Taekwondo Operations"]
     DAYS ==>|Fokus: Operasional Harian & SPP Tiap Bulan| DO_DAYS
     GLOBAL -.->|Terkendala: Bahasa & Pembayaran Lokal| DO_DAYS
     STATUS_QUO -.->|Terkendala: Skalabilitas & Human Error| DO_DAYS
