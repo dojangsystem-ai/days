@@ -215,6 +215,4 @@ Feature: Coach and Freelance Instructor Management
 
 ---
 
-## Navigasi Modul & Fitur
-
-[← Fitur Sebelumnya](FR-06-federation-governance-and-e-cert.md) | [Ikhtisar Sistem](../00-overview.md) | [Roadmap Produk →](../03-roadmap.md)
+[← Fitur Sebelumnya](FR-06-federation-governance-and-e-cert.md) | [Ikhtisar Sistem](../00-overview.md) | [Roadmap Produk →](../03-roadmap.md) | [Fitur Selanjutnya (FR-08) →](FR-08-payment-gateway-and-commerce-engine.md)

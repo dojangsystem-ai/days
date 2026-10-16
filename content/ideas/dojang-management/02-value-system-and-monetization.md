@@ -96,20 +96,66 @@ Untuk mengoperasikan DAYS secara menguntungkan dengan margin kotor (*gross margi
 
 ---
 
-## 4. Matriks Harga Wajar (Fair Market Pricing) di Indonesia
+## 4. Matriks Skema Harga Ideal Tripartit (Fair Market & Sustainable Pricing)
 
-### A. Lisensi Dojang SaaS (Langganan Bulanan / Tahunan)
+Untuk menciptakan ekosistem yang berkelanjutan di Indonesia, skema harga DAYS dibangun di atas prinsip **Keseimbangan Tripartit (Tripartite Equilibrium)**:
+1. **Anggota Nyaman:** Biaya transaksi mikro sangat terjangkau (Rp 2.000 – Rp 2.500), proses instan tanpa upload slip transfer, kwitansi resmi WhatsApp ber-QR, dan akses sports science.
+2. **Dojang Puas:** Arus kas iuran masuk **100% utuh tanpa potongan (Anti-Nombok)**, tunggakan terselamatkan 40–60%, dan langganan SaaS fleksibel bahkan dapat digratiskan via volume rebate.
+3. **DAYS Untung:** Menghasilkan 2 pilar pendapatan berulang (*Predictable SaaS MRR* + *High-Volume Transaction Fintech Margin*) serta lonjakan omzet berkala dari lisensi event & ujian.
+
+```mermaid
+flowchart TD
+    subgraph TripartiteEquilibrium ["Model Keseimbangan Tripartit DAYS"]
+        direction TB
+        M["👨‍👩‍👧 <b>1. Anggota / Wali Murid (Nyaman)</b><br/>• Bayar 1-klik QRIS/VA (Anti-repot)<br/>• Biaya layanan mikro wajar (Rp 2.000 - 2.500)<br/>• Kwitansi resmi otomatis & Sports Science 5P"]
+        D["🥋 <b>2. Dojang / Pemilik Klub (Puas)</b><br/>• Kas iuran diterima 100% UTUH (Anti-Nombok)<br/>• Pulihkan 40-60% iuran tertunggak otomatis<br/>• Langganan SaaS murah & bisa Rebate Gratis"]
+        P["⚡ <b>3. DAYS Platform (Untung Berkelanjutan)</b><br/>• Recurring SaaS MRR dari ratusan dojang<br/>• Margin mikro fintech dari puluhan ribu transaksi<br/>• Take-rate event kejuaraan & ujian kenaikan tingkat"]
+        
+        M <-->|"Transaksi Transparan & Bernilai"| D
+        D <-->|"Efisiensi Operasional & Skalabilitas"| P
+        P <-->|"Reliabilitas Server & Inovasi Fitur"| M
+    end
+```
+
+---
+
+### A. Lapisan 1: Skema Transaksi Finansial Iuran & Commerce (Smart Convenience Fee)
+
+Untuk menjaga kas dojang tetap utuh tanpa terpotong biaya *Merchant Discount Rate* (MDR), sistem menerapkan formula **Gross-up Smart Convenience Fee** yang dibebankan transparan kepada pembayar:
+
+| Komponen Transaksi | Kanal QRIS Instan *(Prioritas Utama)* | Kanal Virtual Account *(BCA / Mandiri / BRI)* |
+| :--- | :--- | :--- |
+| **Iuran Pokok Dojang (*Base Amount*)** | Rp 150.000 *(contoh)* | Rp 150.000 *(contoh)* |
+| **Biaya Layanan Sistem (*Convenience Fee*)** | **+ Rp 2.500** | **+ Rp 4.000** |
+| **Total Dibayar Siswa / Wali** | **Rp 152.500** | **Rp 154.000** |
+| **Beban Gateway / COGS DAYS** | ~Rp 458 *(MDR 0,3% BI)* | ~Rp 2.200 *(Flat VA aggregator)* |
+| **Diterima Kas Dojang (*Net Payout*)** | **Rp 150.000 (100% Utuh / Anti-Nombok)** | **Rp 150.000 (100% Utuh / Anti-Nombok)** |
+| **Margin Bersih DAYS per Transaksi** | **+ Rp 2.042 / transaksi** | **+ Rp 1.800 / transaksi** |
+
+> 📌 **Mengapa Skema Ini Diterima Seluruh Pihak?**
+> - **Wali Murid:** Mengeluarkan tambahan Rp 2.500 jauh lebih murah dibanding biaya transfer antarbank konvensional (Rp 6.500) atau biaya bensin/parkir jika membayar tunai ke dojang. Mereka terbebas dari kewajiban memotret bukti transfer.
+> - **Dojang:** Tidak menanggung potongan MDR sepeser pun. Kas masuk tetap bulat dan rekonsiliasi kasir berjalan otomatis.
+> - **DAYS:** Memperoleh margin transaksi yang terakumulasi masif seiring bertumbuhnya basis atlet aktif.
+
+---
+
+### B. Lapisan 2: Lisensi Dojang SaaS (Langganan Bulanan / Tahunan)
 
 #### 1. Ringkasan Paket & Struktur Biaya
 
 | Paket Langganan | Kuota Murid | Sasaran Dojang | Biaya Bulanan | Biaya Tahunan *(Hemat 20%)* |
 | :--- | :---: | :--- | :--- | :--- |
 | **STARTER** | s/d 25 Murid | Dojang rintisan & ekskul sekolah pemula | **Rp 0** *(Gratis Selamanya)* | **Rp 0** |
-| **PRO DOJANG** | s/d 100 Murid | Dojang reguler mandiri 1 lokasi | **Rp 149.000 – Rp 199.000** | **Rp 1.490.000 – Rp 1.990.000** |
-| **ACADEMY ELITE** | s/d 300 Murid | Akademi prestasi & multi-cabang (s/d 3 lokasi) | **Rp 299.000 – Rp 399.000** | **Rp 2.990.000 – Rp 3.990.000** |
-| **ENTERPRISE** | Unlimited | Jaringan waralaba & pengcab cabang besar | **Rp 699.000 – Rp 999.000** | **Rp 6.990.000 – Rp 9.990.000** |
+| **PRO DOJANG** | s/d 100 Murid | Dojang reguler mandiri 1 lokasi | **Rp 149.000** | **Rp 1.430.000** |
+| **ACADEMY ELITE** | s/d 300 Murid | Akademi prestasi & multi-cabang (s/d 3 lokasi) | **Rp 299.000** | **Rp 2.870.000** |
+| **ENTERPRISE** | Unlimited | Jaringan waralaba & pengcab cabang besar | **Rp 699.000** | **Rp 6.710.000** |
 
-#### 2. Matriks Komparasi Fitur Lengkap (Feature Matrix)
+#### 2. Skema Insentif Revolusioner: Rebate Bebas Biaya SaaS (*Volume Exemption*)
+Untuk memicu adopsi digital secara agresif, DAYS memberikan fasilitas **Cashback / Diskon Lisensi SaaS**:
+- Jika dojang pada paket **PRO** memproses minimal **75 transaksi iuran/bulan via QRIS DAYS**, dojang mendapatkan **Rebate Biaya SaaS sebesar 100% (Gratis Lisensi Bulan Berikutnya)**.
+- *Logika Finansial DAYS:* Dari 75 transaksi QRIS, DAYS telah meraup laba kotor transaksi `75 x Rp 2.042 = Rp 153.150` (sudah menutup nilai langganan Rp 149.000). Pemilik dojang termotivasi aktif mewajibkan muridnya membayar digital!
+
+#### 3. Matriks Komparasi Fitur Lengkap (Feature Matrix)
 
 | Fitur Utama | Starter (Gratis) | Pro Dojang | Academy Elite | Enterprise |
 | :--- | :---: | :---: | :---: | :---: |
@@ -118,7 +164,7 @@ Untuk mengoperasikan DAYS secara menguntungkan dengan margin kotor (*gross margi
 | **Presensi QR Scanner (Coach PWA)** | ✅ | ✅ | ✅ | ✅ |
 | **Aplikasi Murid & Wali (Member App)** | ✅ | ✅ | ✅ | ✅ |
 | **Manajemen Iuran & Invoice Otomatis** | ❌ *(Manual)* | ✅ | ✅ | ✅ |
-| **Kwitansi Digital Ber-QR Resmi** | ❌ | ✅ | ✅ | ✅ |
+| **Kwitansi Digital Ber-QR Resmi WA** | ❌ | ✅ | ✅ | ✅ |
 | **Pembayaran QRIS & Virtual Account** | ❌ | ✅ | ✅ | ✅ |
 | **Sports Science Readiness 5P & RPE** | ❌ | ✅ | ✅ | ✅ |
 | **CMS Website Profil Dojang Mandiri** | Profil Direktori | Subdomain DAYS | Subdomain DAYS | **Custom Domain Sendiri** |
@@ -129,18 +175,18 @@ Untuk mengoperasikan DAYS secara menguntungkan dengan margin kotor (*gross margi
 
 ---
 
-### B. Lisensi Turnamen & Ujian (Pay-Per-Event)
+### C. Lapisan 3: Lisensi Turnamen & Ujian (Pay-Per-Event)
 
-| Paket Event | Sasaran Event | Batasan & Deliverables | Rentang Harga Wajar per Event |
+| Paket Event | Sasaran Event | Batasan & Deliverables | Rentang Biaya Layanan DAYS |
 | :--- | :--- | :--- | :---: |
-| **1. UKT Grading Pack** | Ujian Kenaikan Tingkat Dojang / Pengcab | • Tablet scoring penguji per pos ujian<br>• Fast QR check-in peserta<br>• Otomasi penerbitan e-sertifikat ber-QR | **Rp 5.000 – Rp 7.500**<br>*/ peserta ujian* |
+| **1. UKT Grading Pack** | Ujian Kenaikan Tingkat Dojang / Pengcab | • Scoring penguji per pos via tablet<br>• Fast QR check-in & barcode sabuk<br>• Otomasi penerbitan e-sertifikat ber-QR | **Rp 5.000**<br>*/ peserta ujian* |
 | **2. Turnamen Internal (Club Fest)** | Kejuaraan internal antarrating / festival dojang | • Maksimal 300 peserta<br>• 1 – 2 Gelanggang aktif<br>• Auto-drawing bagan & e-sertifikat juara | **Rp 1.500.000 – Rp 3.000.000**<br>*/ event* |
 | **3. Turnamen Regional (Kejurcab / Open)** | Kejurcab Pengcab atau Open Tournament regional | • 500 – 1.000 peserta<br>• 3 – 4 Gelanggang aktif simultan<br>• Checkpoint timbang badan, Call room, Live scoreboard TV, 1-Click Result Book PDF | **Rp 7.500.000 – Rp 15.000.000**<br>*/ event* |
 | **4. Turnamen Nasional (Kejurnas / Open Besar)** | Kejuaraan Nasional, Piala Kemenpora, EO Profesional | • Unlimited peserta (>1.000 – 3.000+ atlet)<br>• 5 – 8 Gelanggang aktif<br>• Dual-mode Excel parser kontingen tamu<br>• White-label TV display & pendampingan tim IT on-site | **Rp 25.000.000 – Rp 50.000.000**<br>*/ event* |
 
 ---
 
-### C. Lisensi Tata Kelola Federasi (B2G / Pengcab / Pengprov PBTI)
+### D. Lapisan 4: Lisensi Tata Kelola Federasi (B2G / Pengcab / Pengprov PBTI)
 
 | Model Lisensi Federasi | Lingkup Deliverables | Nilai Investasi Wajar |
 | :--- | :--- | :---: |
@@ -149,38 +195,68 @@ Untuk mengoperasikan DAYS secara menguntungkan dengan margin kotor (*gross margi
 
 ---
 
-## 5. Mekanisme Operasional Penagihan & Biaya MDR Riil
+## 5. Mekanisme Operasional Penagihan & Alur Kas (*Settlement Workflow*)
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Wali as Wali Murid / Dojang
+    actor Wali as Wali Murid / Atlet
     participant DAYS as Platform DAYS Core
-    participant PG as Payment Gateway (Midtrans/Xendit)
-    participant Bank as Bank / QRIS Channel
-    participant DojangWallet as Rekening Dojang
+    participant PG as Payment Gateway (Mayar/Xendit)
+    participant Bank as QRIS / Bank Channel
+    participant DojangWallet as Kas / Rekening Dojang
 
-    Wali->>DAYS: Buka Tagihan Iuran di Member App (Rp 250.000)
-    DAYS->>PG: Buat Dynamic QRIS / Virtual Account
-    PG-->>DAYS: URL Pembayaran & QR Payload
-    DAYS-->>Wali: Tampilkan QRIS / VA di layar ponsel
-    Wali->>Bank: Transfer / Scan QRIS
-    Bank->>PG: Notifikasi Pembayaran Berhasil (HTTP Callback)
-    PG->>DAYS: Webhook Payment Settlement Verified
+    Wali->>DAYS: Buka Tagihan Iuran di Member App (Iuran Pokok Rp 250.000)
+    DAYS->>DAYS: Terapkan Gross-up Fee (Total Tagihan: Rp 252.500)
+    DAYS->>PG: Inisiasi Intent Dynamic QRIS (Rp 252.500)
+    PG-->>DAYS: Payload QRIS String & Expired Timer (30 Menit)
+    DAYS-->>Wali: Render QRIS Dinamis di Layar Ponsel
+    Wali->>Bank: Pindai QRIS via BCA / Livin / GoPay / ShopeePay
+    Bank->>PG: Settlement Notifikasi Pembayaran Berhasil
+    PG->>DAYS: Webhook Callback (HMAC Signature Verified)
     DAYS->>DAYS: Ubah Status Tagihan menjadi PAID
-    DAYS->>DAYS: Generate Kwitansi Digital Ber-QR
-    DAYS->>DojangWallet: Otomatis Split Payout ke Kas Dojang (Rp 247.500)
-    DAYS->>DAYS: Potong Platform Fee DAYS (Rp 2.500)
-    DAYS-->>Wali: Notifikasi WhatsApp: Kwitansi Resmi Lunas
+    DAYS->>DAYS: Buka Kunci Akses Scanner Murid (ELIGIBLE_TO_ATTEND)
+    DAYS->>DojangWallet: Kredit Kas Dojang Rp 250.000 (100% UTUH / Anti-Nombok)
+    DAYS->>DAYS: Kredit Platform Fee DAYS +Rp 2.042 (Pasca-MDR)
+    DAYS-->>Wali: Kirim E-Kwitansi Ber-QR Resmi via WhatsApp (< 3 detik)
 ```
 
-### Struktur Biaya Transaksi Digital (MDR / Processing Fees):
-1. **QRIS Bank Indonesia (MDR Usaha Mikro / Pendidikan):**
-   - Biaya MDR resmi sebesar **0,3%** (misal tagihan Rp 250.000 = fee hanya Rp 750). Sangat murah dan terjangkau dibandingkan biaya transfer antarbank konvensional.
-2. **Virtual Account Bank (BCA, Mandiri, BRI, BNI):**
-   - Biaya per transaksi flat **Rp 2.000 – Rp 3.500** per transaksi sukses. Bebas biaya pendaftaran dan rekonsiliasi instan 24/7.
-3. **Mekanisme Payout Pembayaran Iuran Murid:**
-   - Dana otomatis dialirkan ke rekening bank dojang melalui sistem *split-payment escrow* (H+1 hari kerja) setelah dipotong biaya transaksi platform secara transparan.
+---
+
+## 6. Simulasi Finansial Komparatif 3 Aktor (Kasus Dojang 80 Murid)
+
+Untuk membuktikan kelayakan operasional, berikut simulasi kalkulasi matematis pada 1 dojang mandiri tipikal:
+
+```
+Asumsi Parameter Operasional:
+- Basis Murid Aktif: 80 anak
+- Tarif Iuran Bulanan: Rp 175.000 / murid
+- Omzet Bruto Bulanan: 80 x Rp 175.000 = Rp 14.000.000 / bulan
+- Rasio Tunggakan Konvensional (Sebelum DAYS): 20% (Rp 2.800.000 tertahan tiap bulan)
+
+1. DAMPAK FINANSIAL BAGI ANGGOTA (Wali Murid):
+   • Membayar: Rp 177.500 / bulan (Iuran Rp 175.000 + Biaya Layanan Rp 2.500).
+   • Pengeluaran Ekstra: Rp 2.500 (Setara 1/3 biaya transfer antarbank).
+   • Manfaat Langsung: Bukti lunas instan, bebas sengketa kwitansi hilang, 
+     notifikasi jadwal latihan terpusat, dan grafik Sports Science anak terpantau.
+
+2. DAMPAK FINANSIAL BAGI PEMILIK DOJANG:
+   • Kas Iuran Diterima Bersih: Rp 14.000.000 (100% utuh tanpa potongan MDR).
+   • Pemulihan Arus Kas (Via WA Reminder Otomatis): Menyelamatkan 70% tunggakan = +Rp 1.960.000 / bulan.
+   • Penghematan Jam Kerja Staf: Pangkas 25 jam kerja rekap manual (senilai Rp 1.500.000).
+   • Biaya SaaS Paket Pro: Rp 149.000 / bulan.
+   • Net Finansial Gain Dojang: (+Rp 1.960.000) - Rp 149.000 = +Rp 1.811.000 keuntungan kas bersih baru/bulan.
+   • ROI Dojang: > 1.200% per bulan!
+
+3. DAMPAK FINANSIAL BAGI PLATFORM DAYS:
+   • Pendapatan SaaS Bulanan: Rp 149.000 / bulan.
+   • Pendapatan Margin Transaksi QRIS: 80 x Rp 2.042 = Rp 163.360 / bulan.
+   • Total Pendapatan Kotor DAYS per Dojang: Rp 312.360 / bulan.
+   • Dengan 100 Dojang Terhubung:
+     - Gross MRR DAYS: Rp 31.236.000 / bulan.
+     - Estimasi OPEX Cloud & WA Gateway: Rp 3.850.000 / bulan.
+     - Laba Bersih Operasional (EBITDA): Rp 27.386.000 / bulan (Gross Margin 87,6%).
+```
 
 ---
 

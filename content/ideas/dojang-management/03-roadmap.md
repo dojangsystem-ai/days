@@ -57,8 +57,8 @@ Target: Membuka keran pendapatan B2B via Turnamen & Sports Science, serta automa
   - Formulir kesiapan harian 5P (Tidur, Energi, Nyeri, Stres, Mental) & berat badan aktual.
   - Squad Readiness Board lampu lalu lintas (Hijau, Kuning, Merah) pada aplikasi Coach.
   - Log Session-RPE beban latihan dan riwayat cedera atlet.
-- [ ] **Payment Gateway Integration:**
-  - Penerimaan pembayaran otomatis via QRIS, Virtual Account (BCA, BRI, Mandiri), dan E-Wallet untuk iuran dojang serta pendaftaran kejuaraan.
+- [ ] **Payment Gateway & Multi-Commerce Integration ([FR-08](features/FR-08-payment-gateway-and-commerce-engine.md)):**
+  - Penerimaan pembayaran otomatis via QRIS, Virtual Account (BCA, BRI, Mandiri), dan E-Wallet untuk iuran dojang, pendaftaran kejuaraan/UKT, serta merchandise fisik.
 - [ ] **Otomasi Sertifikat & Ujian (UKT Modul 2):**
   - Terminal scoring tablet penguji per pos ujian.
   - Batch generator ratusan e-sertifikat ber-QR yang dapat diverifikasi publik tanpa login di `https://dojang.warsootech.com/e-certs`.
